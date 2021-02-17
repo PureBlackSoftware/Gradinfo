@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">Gradinfo</string>
+
+    <!-- region Content Description -->
+    <string name="Description_Icon">"Icon"</string>
+    <string name="Description_Image">"Image"</string>
+    <!-- endregion -->
+
+    <!-- region HomeFragment -->
+    <string name="Home_Title">"Ana Sayfa"</string>
+    <!-- endregion -->
+
+    <!-- region SearchFragment -->
+    <string name="Search_Title">"Arama"</string>
+    <!-- endregion -->
+
+    <!-- region UserFragment -->
+    <string name="User_Title">"Kullanıcı"</string>
+    <!-- endregion -->
+
+</resources>
