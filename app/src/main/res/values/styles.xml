@@ -35,14 +35,14 @@
     <style name="PureBar.Toolbar" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/design_default_color_primary_dark</item>
+        <item name="android:background">@color/Toolbar_Color</item>
         <item name="contentInsetStart">0dp</item>
         <item name="contentInsetEnd">0dp</item>
     </style>
 
     <style name="PureBar.Toolbar.Relative" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="PureBar.Toolbar.Image" parent="PureBar">
@@ -64,7 +64,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">bottom</item>
-        <item name="android:background">@color/design_default_color_primary_dark</item>
+        <item name="android:background">@color/Toolbar_Color</item>
         <item name="layout_behavior">@string/hide_bottom_view_on_scroll_behavior</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
@@ -78,6 +78,31 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginHorizontal">5dp</item>
         <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <style name="PureGrad.Card" parent="PureGrad">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PureGrad.Linear" parent="PureGrad">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="PureGrad.Linear.Vertical" parent="PureGrad.Linear">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PureGrad.Image" parent="PureGrad">
+        <item name="android:layout_width">128dp</item>
+        <item name="android:layout_height">128dp</item>
+    </style>
+
+    <style name="PureGrad.Text" parent="PureGrad">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
     <!-- endregion -->
 

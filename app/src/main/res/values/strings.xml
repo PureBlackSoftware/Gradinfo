@@ -19,4 +19,10 @@
     <string name="User_Title">"Kullanıcı"</string>
     <!-- endregion -->
 
+    <!-- region Grad -->
+    <string name="Grad_Name_Sample">"Gordon Freeman"</string>
+    <string name="Grad_Year_Sample">"1998"</string>
+    <string name="Grad_Degree_Sample">"Theoretical Physics"</string>
+    <!-- endregion -->
+
 </resources>
