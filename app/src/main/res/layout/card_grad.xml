@@ -19,14 +19,19 @@
                 android:text="@string/Grad_Name_Sample" />
 
             <TextView
-                android:id="@+id/txtYearGC"
-                style="@style/PureGrad.Text"
-                android:text="@string/Grad_Year_Sample" />
-
-            <TextView
                 android:id="@+id/txtDegreeGC"
                 style="@style/PureGrad.Text"
                 android:text="@string/Grad_Degree_Sample" />
+
+            <TextView
+                android:id="@+id/txtNumberGC"
+                style="@style/PureGrad.Text"
+                android:text="@string/Grad_Number_Sample" />
+
+            <TextView
+                android:id="@+id/txtYearGC"
+                style="@style/PureGrad.Text"
+                android:text="@string/Grad_Year_Sample" />
 
         </LinearLayout>
 

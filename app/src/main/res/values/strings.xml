@@ -20,9 +20,10 @@
     <!-- endregion -->
 
     <!-- region Grad -->
-    <string name="Grad_Name_Sample">"Gordon Freeman"</string>
-    <string name="Grad_Year_Sample">"1998"</string>
-    <string name="Grad_Degree_Sample">"Theoretical Physics"</string>
+    <string name="Grad_Number_Sample">"1170606018"</string>
+    <string name="Grad_Name_Sample">"Murat BIYIK"</string>
+    <string name="Grad_Degree_Sample">"Bilgisayar Mühendisliği"</string>
+    <string name="Grad_Year_Sample">"2021"</string>
     <!-- endregion -->
 
 </resources>
