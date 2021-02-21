@@ -1,5 +1,6 @@
 package com.pureblacksoft.gradinfo.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -8,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.databinding.ActivityMainBinding
+import com.pureblacksoft.gradinfo.service.GradDataService
 
 class MainActivity : AppCompatActivity()
 {
@@ -27,5 +29,12 @@ class MainActivity : AppCompatActivity()
         binding.bottomNavMA.setupWithNavController(navController)
         binding.bottomNavMA.itemIconTintList = null
         //endregion
+
+        requestData()
+    }
+
+    private fun requestData() {
+        val intent = Intent(this, GradDataService::class.java)
+        GradDataService.enqueueWork(this, intent)
     }
 }
