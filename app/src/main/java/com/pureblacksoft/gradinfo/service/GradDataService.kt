@@ -4,12 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.os.StrictMode
+import android.util.Log
 import androidx.core.app.JobIntentService
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.pureblacksoft.gradinfo.data.Grad
-import com.pureblacksoft.gradinfo.function.LogFun
 import org.json.JSONException
 import java.io.ByteArrayOutputStream
 import java.net.URL
@@ -17,9 +18,11 @@ import java.net.URL
 class GradDataService : JobIntentService()
 {
     companion object {
+        private const val TAG = "GradDataService"
+
         private const val URL_GRADINFO = "https://pureblack.000webhostapp.com/gradinfo/"
         private const val URL_DATA_GRAD = URL_GRADINFO + "script/db_grad_data.php"
-        private const val URL_IMAGE_GRAD = URL_GRADINFO + "image/story/"
+        private const val URL_IMAGE_GRAD = URL_GRADINFO + "image/grad/"
 
         var gradList = mutableListOf<Grad>()
 
@@ -31,16 +34,26 @@ class GradDataService : JobIntentService()
         }
     }
 
+    override fun onCreate() {
+        super.onCreate()
+
+        Log.d(TAG, "onCreate: Running")
+    }
+
     override fun onHandleWork(intent: Intent) {
+        Log.d(TAG, "onHandleWork: Running")
+
         val requestQueue = Volley.newRequestQueue(this)
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, URL_DATA_GRAD, null,
             { response ->
-                LogFun.logDataI("(Connection Successful) -> $URL_DATA_GRAD")
+                Log.d(TAG, "Connection successful: $URL_DATA_GRAD")
 
                 try {
                     val resultArray = response.getJSONArray("results")
                     val raLength = resultArray.length()
                     for (i in 0 until raLength) {
+                        if (isStopped) return@JsonObjectRequest
+
                         val jsonObject = resultArray.getJSONObject(i)
                         val gradNumber = jsonObject.getString("grad_number").toInt()
                         val gradName = jsonObject.getString("grad_name")
@@ -48,6 +61,9 @@ class GradDataService : JobIntentService()
                         val gradYear = jsonObject.getString("grad_year").toInt()
 
                         //region Grad Image
+                        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+                        StrictMode.setThreadPolicy(policy)
+
                         //region Get Bitmap
                         val imageName = jsonObject.getString("grad_image")
                         val imageURL = URL(URL_IMAGE_GRAD + imageName)
@@ -66,8 +82,6 @@ class GradDataService : JobIntentService()
                         //endregion
                         //endregion
 
-                        LogFun.logDataI("Grad $gradNumber -> Add")
-
                         gradList.add(
                             Grad(
                                 number = gradNumber,
@@ -77,22 +91,35 @@ class GradDataService : JobIntentService()
                                 image = gradImage
                             )
                         )
+
+                        Log.d(TAG, "Grad $gradNumber: Added")
                     }
 
                     onSuccess?.invoke()
-                }
-                catch (e: JSONException) {
-                    LogFun.logDataE(e.toString())
+                } catch (e: JSONException) {
+                    Log.e(TAG, e.toString())
 
                     onFailure?.invoke()
                 }
             },
             { error ->
-                LogFun.logDataI("(Connection Failed) -> $URL_DATA_GRAD")
-                LogFun.logDataE(error.toString())
+                Log.d(TAG, "Connection failed: $URL_DATA_GRAD")
+                Log.e(TAG, error.toString())
 
                 onFailure?.invoke()
             })
         requestQueue.add(jsonObjectRequest)
+    }
+
+    override fun onStopCurrentWork(): Boolean {
+        Log.d(TAG, "onStopCurrentWork: Running")
+
+        return super.onStopCurrentWork()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.d(TAG, "onDestroy: Running")
     }
 }

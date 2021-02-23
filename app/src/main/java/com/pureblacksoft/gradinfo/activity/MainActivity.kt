@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity()
         binding.bottomNavMA.itemIconTintList = null
         //endregion
 
-        requestData()
+        startGradDataService()
     }
 
-    private fun requestData() {
+    private fun startGradDataService() {
         val intent = Intent(this, GradDataService::class.java)
         GradDataService.enqueueWork(this, intent)
     }
