@@ -7,14 +7,50 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    <!-- Custom Colors -->
+    <!-- region Custom Colors -->
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="red">#D50000</color>
+    <color name="red_light">#FFEBEE</color>
+    <color name="teal">#4DB6AC</color>
+    <color name="teal_dark">#004D40</color>
+    <!-- endregion -->
 
-    <!-- App Colors -->
-    <color name="Primary_Color">@color/white</color>
-    <color name="Primary_Color_Night">@color/black</color>
+    <!-- region App Colors -->
+    <!-- region Primary Colors -->
+    <color name="Primary">@color/white</color>
+    <color name="Primary_Variant">@color/teal</color>
+    <color name="On_Primary">@color/black</color>
 
-    <color name="Toolbar_Color">@color/red</color>
+    <color name="Primary_Night">@color/black</color>
+    <color name="Primary_Variant_Night">@color/teal_dark</color>
+    <color name="On_Primary_Night">@color/white</color>
+    <!-- endregion -->
+
+    <!-- region Secondary Colors -->
+    <color name="Secondary">@color/black</color>
+    <color name="Secondary_Variant">@color/teal_dark</color>
+    <color name="On_Secondary">@color/white</color>
+
+    <color name="Secondary_Night">@color/white</color>
+    <color name="Secondary_Variant_Night">@color/teal</color>
+    <color name="On_Secondary_Night">@color/black</color>
+    <!-- endregion -->
+
+    <!-- region Custom Theme -->
+    <color name="Background">@color/white</color>
+    <color name="OnBackground">@color/black</color>
+    <color name="Surface">@color/red_light</color>
+    <color name="OnSurface">@color/black</color>
+
+    <color name="Background_Night">@color/black</color>
+    <color name="OnBackground_Night">@color/white</color>
+    <color name="Surface_Night">@color/red</color>
+    <color name="OnSurface_Night">@color/white</color>
+    <!-- endregion -->
+
+    <!-- region Static Colors -->
+    <color name="Toolbar">@color/red</color>
+    <!-- endregion -->
+    <!-- endregion -->
 </resources>

@@ -4,19 +4,23 @@
     <style name="Theme.Gradinfo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Primary_Color_Night</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/Primary_Night</item>
+        <item name="colorPrimaryVariant">@color/Primary_Variant_Night</item>
+        <item name="colorOnPrimary">@color/On_Primary_Night</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/Secondary_Night</item>
+        <item name="colorSecondaryVariant">@color/Secondary_Variant_Night</item>
+        <item name="colorOnSecondary">@color/On_Secondary_Night</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/Toolbar_Color</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Toolbar</item>
 
         <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/Background_Night</item>
+        <item name="colorOnBackground">@color/OnBackground_Night</item>
+        <item name="colorSurface">@color/Surface_Night</item>
+        <item name="colorOnSurface">@color/OnSurface_Night</item>
     </style>
 
 </resources>
