@@ -1,17 +1,21 @@
 package com.pureblacksoft.gradinfo.adapter
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.pureblacksoft.gradinfo.data.Grad
 import com.pureblacksoft.gradinfo.databinding.CardGradBinding
 
 class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapter<GradAdapter.ViewHolder>()
 {
+    private lateinit var context: Context
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
+        context = parent.context
+
+        val layoutInflater = LayoutInflater.from(context)
         val binding = CardGradBinding.inflate(layoutInflater, parent, false)
 
         return ViewHolder(binding)
@@ -31,9 +35,7 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
             binding.txtNameGC.text = grad.name
             binding.txtDegreeGC.text = grad.degree
             binding.txtYearGC.text = grad.year.toString()
-
-            val imageBitmap = BitmapFactory.decodeByteArray(grad.image, 0, grad.image.size)
-            binding.imgGradGC.setImageBitmap(Bitmap.createScaledBitmap(imageBitmap, imageBitmap.width, imageBitmap.height, false))
+            Glide.with(context).load(grad.image).into(binding.imgGradGC)
 
             binding.root.setOnClickListener {}
         }
