@@ -3,6 +3,7 @@ package com.pureblacksoft.gradinfo.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,10 @@ import com.pureblacksoft.gradinfo.service.GradDataService
 
 class MainActivity : AppCompatActivity()
 {
+    companion object {
+        var onSuccessfulService: (() -> Unit)? = null
+    }
+
     lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
@@ -31,9 +36,23 @@ class MainActivity : AppCompatActivity()
         //endregion
 
         startGradDataService()
+
+        //region Events
+        GradDataService.onSuccess = {
+            binding.spinKitMA.visibility = View.GONE
+
+            onSuccessfulService?.invoke()
+        }
+
+        GradDataService.onFailure = {
+            binding.spinKitMA.visibility = View.GONE
+        }
+        //endregion
     }
 
     private fun startGradDataService() {
+        binding.spinKitMA.visibility = View.VISIBLE
+
         val intent = Intent(this, GradDataService::class.java)
         GradDataService.enqueueWork(this, intent)
     }

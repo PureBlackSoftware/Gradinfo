@@ -66,7 +66,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         //endregion
 
         //region Events
-        GradDataService.onSuccess = {
+        MainActivity.onSuccessfulService = {
             setGradAdapter()
         }
         //endregion
@@ -86,7 +86,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     }
 
     private fun setGradAdapter() {
-        if (GradDataService.gradList.size != 0) {
+        if (_binding != null && GradDataService.gradList.size != 0) {
             Log.d(TAG, "setGradAdapter: Running")
 
             gradAdapter = GradAdapter(GradDataService.gradList)

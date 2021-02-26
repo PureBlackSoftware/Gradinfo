@@ -10,7 +10,7 @@
 
     <style name="PureRoot.Relative" parent="PureRoot">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
     <!-- endregion -->
 
@@ -19,7 +19,7 @@
 
     <style name="PureBox.Container.Scrollable" parent="PureBox">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
     </style>
     <!-- endregion -->
