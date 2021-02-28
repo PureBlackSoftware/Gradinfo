@@ -26,6 +26,13 @@
                     android:layout_toEndOf="@+id/imgIconMTB"
                     android:text="@string/Home_Title" />
 
+                <ImageView
+                    android:id="@+id/imgButtonMTB"
+                    style="@style/PureBar.Toolbar.Image"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/Description_Icon"
+                    android:src="@drawable/ic_filter_bwhite" />
+
             </RelativeLayout>
 
         </com.google.android.material.appbar.MaterialToolbar>

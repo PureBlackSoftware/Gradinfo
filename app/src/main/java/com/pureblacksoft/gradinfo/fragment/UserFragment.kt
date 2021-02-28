@@ -39,6 +39,7 @@ class UserFragment : Fragment(R.layout.fragment_user)
         //region Toolbar
         activity.binding.imgIconMTB.setImageResource(R.drawable.ic_user_bwhite)
         activity.binding.txtTitleMTB.text = getString(R.string.User_Title)
+        activity.binding.imgButtonMTB.setImageResource(R.drawable.ic_pref_bwhite)
         //endregion
     }
 
