@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- region App -->
+    <dimen name="App_Margin_S">5dp</dimen>
+    <dimen name="App_Margin_M">10dp</dimen>
+
+    <dimen name="App_TextSize_S">16sp</dimen>
+    <dimen name="App_TextSize_M">18sp</dimen>
+    <dimen name="App_TextSize_L">20sp</dimen>
+    <!-- endregion -->
+
+    <!-- region Grad -->
+    <dimen name="Grad_Image_Width">128dp</dimen>
+    <dimen name="Grad_Image_Height">128dp</dimen>
+    <!-- endregion -->
+</resources>

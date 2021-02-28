@@ -13,6 +13,9 @@
 
     <!-- region SearchFragment -->
     <string name="Search_Title">"Arama"</string>
+    <string name="Search_Query_Hint_Name">"Öğrenci adı giriniz…"</string>
+    <string name="Search_Query_Hint_Number">"Öğrenci numarası giriniz…"</string>
+    <string name="Search_No_Result">"Hiç sonuç bulunamadı"</string>
     <!-- endregion -->
 
     <!-- region UserFragment -->

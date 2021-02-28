@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/PureRoot.Relative"
     tools:context=".fragment.SearchFragment">
 
+    <LinearLayout
+        android:id="@+id/lnrSearchSF"
+        style="@style/PureBox.Linear">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchSF"
+            style="@style/PureBar.Search"
+            app:queryHint="@string/Search_Query_Hint_Name" />
+
+        <TextView
+            android:id="@+id/txtNoResultHF"
+            style="@style/PureInfo.Text.Content.Card"
+            android:text="@string/Search_No_Result"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSF"
-        style="@style/PureGrad.Recycler" />
+        style="@style/PureGrad.Recycler"
+        android:layout_below="@+id/lnrSearchSF" />
 
 </RelativeLayout>

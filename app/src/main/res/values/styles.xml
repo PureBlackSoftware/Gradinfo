@@ -22,6 +22,12 @@
         <item name="android:layout_height">match_parent</item>
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
     </style>
+
+    <style name="PureBox.Linear" parent="PureBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
     <!-- endregion -->
 
     <!-- region PureBar -->
@@ -49,14 +55,14 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/App_Margin_M</item>
     </style>
 
     <style name="PureBar.Toolbar.Text" parent="PureBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
@@ -68,6 +74,43 @@
         <item name="layout_behavior">@string/hide_bottom_view_on_scroll_behavior</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
+
+    <style name="PureBar.Search" parent="PureBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/App_Margin_S</item>
+        <item name="android:imeOptions">flagNoExtractUi|flagNoFullscreen</item>
+        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:background">@drawable/shape_search</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="searchIcon">@null</item>
+        <item name="queryBackground">@null</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region PureInfo -->
+    <style name="PureInfo" />
+
+    <style name="PureInfo.Text.Title" parent="PureInfo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="PureInfo.Text.Content" parent="PureInfo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="PureInfo.Text.Content.Card" parent="PureInfo.Text.Content">
+        <item name="android:layout_margin">@dimen/App_Margin_S</item>
+        <item name="android:background">@drawable/shape_info</item>
+    </style>
     <!-- endregion -->
 
     <!-- region PureGrad -->
@@ -76,7 +119,7 @@
     <style name="PureGrad.Recycler" parent="PureGrad">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:scrollbars">vertical</item>
     </style>
 
@@ -97,16 +140,17 @@
     </style>
 
     <style name="PureGrad.Image" parent="PureGrad">
-        <item name="android:layout_width">128dp</item>
-        <item name="android:layout_height">128dp</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">@dimen/Grad_Image_Width</item>
+        <item name="android:layout_height">@dimen/Grad_Image_Height</item>
+        <item name="android:layout_margin">@dimen/App_Margin_M</item>
     </style>
 
     <style name="PureGrad.Text" parent="PureGrad">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">5dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:layout_margin">@dimen/App_Margin_S</item>
+        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textColor">?colorOnSurface</item>
     </style>
     <!-- endregion -->
 
