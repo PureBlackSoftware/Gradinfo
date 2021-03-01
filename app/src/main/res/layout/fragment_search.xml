@@ -6,6 +6,15 @@
     style="@style/PureRoot.Relative"
     tools:context=".fragment.SearchFragment">
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollSF"
+        style="@style/PureBox.Scroll">
+
+        <LinearLayout style="@style/PureBox.Linear">
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
     <LinearLayout
         android:id="@+id/lnrSearchSF"
         style="@style/PureBox.Linear">
@@ -16,7 +25,7 @@
             app:queryHint="@string/Search_Query_Hint_Name" />
 
         <TextView
-            android:id="@+id/txtNoResultHF"
+            android:id="@+id/txtNoResultSF"
             style="@style/PureInfo.Text.Content.Card"
             android:text="@string/Search_No_Result"
             android:visibility="gone" />

@@ -23,6 +23,13 @@
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
     </style>
 
+    <style name="PureBox.Scroll" parent="PureBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/App_Margin_S</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
     <style name="PureBox.Linear" parent="PureBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
