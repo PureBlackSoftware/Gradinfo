@@ -68,7 +68,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSecondary</item>
+        <item name="android:textColor">?colorOnPrimary</item>
     </style>
 
     <style name="PureBar.BottomNav" parent="PureBar">
@@ -98,9 +98,8 @@
     <style name="PureButton.Text.Title" parent="PureButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:textColor">?colorOnSecondary</item>
     </style>
 
     <style name="PureButton.Relative" parent="PureButton">
@@ -119,7 +118,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:textColor">?colorOnBackground</item>
     </style>
     <!-- endregion -->
 
@@ -131,7 +130,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:textColor">?colorOnSecondary</item>
     </style>
 
     <style name="PureInfo.Text.Content" parent="PureInfo">

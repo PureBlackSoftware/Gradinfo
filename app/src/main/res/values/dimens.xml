@@ -4,6 +4,8 @@
     <!-- region App -->
     <dimen name="App_Margin_S">5dp</dimen>
     <dimen name="App_Margin_M">10dp</dimen>
+    <dimen name="App_Margin_L">20dp</dimen>
+    <dimen name="App_Margin_XL">40dp</dimen>
 
     <dimen name="App_TextSize_S">16sp</dimen>
     <dimen name="App_TextSize_M">18sp</dimen>

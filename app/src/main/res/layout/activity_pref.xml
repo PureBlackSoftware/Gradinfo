@@ -30,27 +30,30 @@
 
     <LinearLayout
         style="@style/PureBox.Linear"
-        android:layout_centerVertical="true">
+        android:layout_below="@+id/toolbarPA"
+        android:layout_marginTop="@dimen/App_Margin_XL">
 
         <TextView
             style="@style/PureButton.Text.Title"
-            android:layout_marginBottom="@dimen/App_Margin_M"
+            android:layout_marginStart="@dimen/App_Margin_XL"
+            android:layout_marginBottom="@dimen/App_Margin_L"
             android:text="@string/Pref_Theme" />
 
         <RelativeLayout
             android:id="@+id/rltDefaultThemePA"
             style="@style/PureButton.Relative"
+            android:layout_marginStart="@dimen/App_Margin_XL"
             android:layout_marginBottom="@dimen/App_Margin_M">
 
             <ImageView
                 android:id="@+id/imgDefaultThemePA"
                 style="@style/PureButton.Relative.Image"
-                android:layout_marginHorizontal="@dimen/App_Margin_M"
                 android:contentDescription="@string/Description_Icon"
                 android:src="@drawable/ic_check" />
 
             <TextView
                 style="@style/PureButton.Relative.Text"
+                android:layout_marginStart="@dimen/App_Margin_M"
                 android:layout_toEndOf="@+id/imgDefaultThemePA"
                 android:text="@string/Pref_Theme_Default" />
 
@@ -59,17 +62,18 @@
         <RelativeLayout
             android:id="@+id/rltLightThemePA"
             style="@style/PureButton.Relative"
+            android:layout_marginStart="@dimen/App_Margin_XL"
             android:layout_marginBottom="@dimen/App_Margin_M">
 
             <ImageView
                 android:id="@+id/imgLightThemePA"
                 style="@style/PureButton.Relative.Image"
-                android:layout_marginHorizontal="@dimen/App_Margin_M"
                 android:contentDescription="@string/Description_Icon"
                 android:src="@drawable/ic_check" />
 
             <TextView
                 style="@style/PureButton.Relative.Text"
+                android:layout_marginStart="@dimen/App_Margin_M"
                 android:layout_toEndOf="@+id/imgLightThemePA"
                 android:text="@string/Pref_Theme_Light" />
 
@@ -77,17 +81,18 @@
 
         <RelativeLayout
             android:id="@+id/rltDarkThemePA"
-            style="@style/PureButton.Relative">
+            style="@style/PureButton.Relative"
+            android:layout_marginStart="@dimen/App_Margin_XL">
 
             <ImageView
                 android:id="@+id/imgDarkThemePA"
                 style="@style/PureButton.Relative.Image"
-                android:layout_marginHorizontal="@dimen/App_Margin_M"
                 android:contentDescription="@string/Description_Icon"
                 android:src="@drawable/ic_check" />
 
             <TextView
                 style="@style/PureButton.Relative.Text"
+                android:layout_marginStart="@dimen/App_Margin_M"
                 android:layout_toEndOf="@+id/imgDarkThemePA"
                 android:text="@string/Pref_Theme_Dark" />
 

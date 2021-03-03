@@ -10,15 +10,15 @@
     <!-- region Custom Colors -->
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-    <color name="teal">#00796b</color>
-    <color name="teal_light">#48a999</color>
-    <color name="teal_dark">#004c40</color>
+    <color name="teal">#00695c</color>
+    <color name="teal_light">#439889</color>
+    <color name="teal_dark">#003d33</color>
     <color name="purple">#7b1fa2</color>
     <color name="purple_light">#ae52d4</color>
     <color name="purple_dark">#4a0072</color>
-    <color name="red">#d32f2f</color>
-    <color name="red_light">#ffcccb</color>
-    <color name="red_dark">#9a0007</color>
+    <color name="red">#f44336</color>
+    <color name="red_light">#ff7961</color>
+    <color name="red_dark">#ba000d</color>
     <!-- endregion -->
 
     <!-- region App Colors -->
@@ -35,11 +35,11 @@
     <!-- region Secondary Colors -->
     <color name="Secondary">@color/purple_light</color>
     <color name="Secondary_Variant">@color/purple_dark</color>
-    <color name="On_Secondary">@color/white</color>
+    <color name="On_Secondary">@color/red_dark</color>
 
     <color name="Secondary_Night">@color/purple</color>
     <color name="Secondary_Variant_Night">@color/purple_dark</color>
-    <color name="On_Secondary_Night">@color/white</color>
+    <color name="On_Secondary_Night">@color/red_light</color>
     <!-- endregion -->
 
     <!-- region Custom Theme -->
