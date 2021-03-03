@@ -49,9 +49,9 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         super.onViewCreated(view, savedInstanceState)
 
         //region Toolbar
-        activity.binding.imgIconMTB.setImageResource(R.drawable.ic_home_bwhite)
-        activity.binding.txtTitleMTB.text = getString(R.string.Home_Title)
-        activity.binding.imgButtonMTB.setImageResource(R.drawable.ic_filter_bwhite)
+        activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_home_bwhite)
+        activity.binding.txtToolbarTitleMA.text = getString(R.string.Home_Title)
+        activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_filter_bwhite)
         //endregion
 
         //region RecyclerView

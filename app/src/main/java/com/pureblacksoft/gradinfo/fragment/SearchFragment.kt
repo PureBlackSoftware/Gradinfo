@@ -49,9 +49,9 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         super.onViewCreated(view, savedInstanceState)
 
         //region Toolbar
-        activity.binding.imgIconMTB.setImageResource(R.drawable.ic_search_bwhite)
-        activity.binding.txtTitleMTB.text = getString(R.string.Search_Title)
-        activity.binding.imgButtonMTB.setImageResource(R.drawable.ic_parse_bwhite)
+        activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_search_bwhite)
+        activity.binding.txtToolbarTitleMA.text = getString(R.string.Search_Title)
+        activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_parse_bwhite)
         //endregion
 
         //region RecyclerView

@@ -7,6 +7,7 @@
     <string name="Description_Image">"Image"</string>
     <!-- endregion -->
 
+    <!-- region MainActivity -->
     <!-- region HomeFragment -->
     <string name="Home_Title">"Ana Sayfa"</string>
     <!-- endregion -->
@@ -20,6 +21,15 @@
 
     <!-- region UserFragment -->
     <string name="User_Title">"Kullanıcı"</string>
+    <!-- endregion -->
+    <!-- endregion -->
+
+    <!-- region PrefActivity -->
+    <string name="Pref_Title">"Tercihler"</string>
+    <string name="Pref_Theme">"Uygulama Teması"</string>
+    <string name="Pref_Theme_Default">"Varsayılan Tema"</string>
+    <string name="Pref_Theme_Light">"Açık Tema"</string>
+    <string name="Pref_Theme_Dark">"Koyu Tema"</string>
     <!-- endregion -->
 
     <!-- region Grad -->

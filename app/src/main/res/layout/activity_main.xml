@@ -12,24 +12,26 @@
             android:id="@+id/toolbarMA"
             style="@style/PureBar.Toolbar">
 
-            <RelativeLayout style="@style/PureBar.Toolbar.Relative">
+            <RelativeLayout style="@style/PureBar.Relative">
 
                 <ImageView
-                    android:id="@+id/imgIconMTB"
-                    style="@style/PureBar.Toolbar.Image"
+                    android:id="@+id/imgToolbarIconMA"
+                    style="@style/PureBar.Relative.Image"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
                     android:contentDescription="@string/Description_Icon"
                     android:src="@drawable/ic_home_bwhite" />
 
                 <TextView
-                    android:id="@+id/txtTitleMTB"
-                    style="@style/PureBar.Toolbar.Text"
-                    android:layout_toEndOf="@+id/imgIconMTB"
+                    android:id="@+id/txtToolbarTitleMA"
+                    style="@style/PureBar.Relative.Text"
+                    android:layout_toEndOf="@+id/imgToolbarIconMA"
                     android:text="@string/Home_Title" />
 
                 <ImageView
-                    android:id="@+id/imgButtonMTB"
-                    style="@style/PureBar.Toolbar.Image"
+                    android:id="@+id/imgToolbarButtonMA"
+                    style="@style/PureBar.Relative.Image"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
                     android:contentDescription="@string/Description_Icon"
                     android:src="@drawable/ic_filter_bwhite" />
 

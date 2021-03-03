@@ -7,6 +7,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHF"
-        style="@style/PureGrad.Recycler" />
+        style="@style/PureGrad.Recycler"
+        android:layout_margin="@dimen/App_Margin_S" />
 
 </RelativeLayout>

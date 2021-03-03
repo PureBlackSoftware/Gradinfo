@@ -8,7 +8,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollSF"
-        style="@style/PureBox.Scroll">
+        style="@style/PureBox.Scroll"
+        android:layout_margin="@dimen/App_Margin_S">
 
         <LinearLayout style="@style/PureBox.Linear">
 
@@ -22,11 +23,15 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchSF"
             style="@style/PureBar.Search"
+            android:layout_marginHorizontal="@dimen/App_Margin_S"
+            android:layout_marginTop="@dimen/App_Margin_S"
             app:queryHint="@string/Search_Query_Hint_Name" />
 
         <TextView
             android:id="@+id/txtNoResultSF"
             style="@style/PureInfo.Text.Content.Card"
+            android:layout_marginHorizontal="@dimen/App_Margin_S"
+            android:layout_marginTop="@dimen/App_Margin_S"
             android:text="@string/Search_No_Result"
             android:visibility="gone" />
 
@@ -35,6 +40,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSF"
         style="@style/PureGrad.Recycler"
-        android:layout_below="@+id/lnrSearchSF" />
+        android:layout_below="@+id/lnrSearchSF"
+        android:layout_margin="@dimen/App_Margin_S" />
 
 </RelativeLayout>

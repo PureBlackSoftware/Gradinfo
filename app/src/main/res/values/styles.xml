@@ -26,7 +26,6 @@
     <style name="PureBox.Scroll" parent="PureBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:scrollbars">vertical</item>
     </style>
 
@@ -48,36 +47,35 @@
     <style name="PureBar.Toolbar" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/Toolbar</item>
+        <item name="android:background">?android:statusBarColor</item>
         <item name="contentInsetStart">0dp</item>
         <item name="contentInsetEnd">0dp</item>
     </style>
 
-    <style name="PureBar.Toolbar.Relative" parent="PureBar">
+    <style name="PureBar.Relative" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="PureBar.Toolbar.Image" parent="PureBar">
+    <style name="PureBar.Relative.Image" parent="PureBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_marginHorizontal">@dimen/App_Margin_M</item>
     </style>
 
-    <style name="PureBar.Toolbar.Text" parent="PureBar">
+    <style name="PureBar.Relative.Text" parent="PureBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">?colorOnSecondary</item>
     </style>
 
     <style name="PureBar.BottomNav" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">bottom</item>
-        <item name="android:background">@color/Toolbar</item>
+        <item name="android:background">?android:statusBarColor</item>
         <item name="layout_behavior">@string/hide_bottom_view_on_scroll_behavior</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
@@ -85,13 +83,43 @@
     <style name="PureBar.Search" parent="PureBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:imeOptions">flagNoExtractUi|flagNoFullscreen</item>
         <item name="android:textSize">@dimen/App_TextSize_M</item>
         <item name="android:background">@drawable/shape_search</item>
         <item name="iconifiedByDefault">false</item>
         <item name="searchIcon">@null</item>
         <item name="queryBackground">@null</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region PureButton -->
+    <style name="PureButton" />
+
+    <style name="PureButton.Text.Title" parent="PureButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="PureButton.Relative" parent="PureButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PureButton.Relative.Image" parent="PureButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="PureButton.Relative.Text" parent="PureButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
+        <item name="android:textColor">?colorOnSurface</item>
     </style>
     <!-- endregion -->
 
@@ -115,7 +143,6 @@
     </style>
 
     <style name="PureInfo.Text.Content.Card" parent="PureInfo.Text.Content">
-        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:background">@drawable/shape_info</item>
     </style>
     <!-- endregion -->
@@ -126,7 +153,6 @@
     <style name="PureGrad.Recycler" parent="PureGrad">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:scrollbars">vertical</item>
     </style>
 
@@ -149,13 +175,11 @@
     <style name="PureGrad.Image" parent="PureGrad">
         <item name="android:layout_width">@dimen/Grad_Image_Width</item>
         <item name="android:layout_height">@dimen/Grad_Image_Height</item>
-        <item name="android:layout_margin">@dimen/App_Margin_M</item>
     </style>
 
     <style name="PureGrad.Text" parent="PureGrad">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/App_Margin_S</item>
         <item name="android:textSize">@dimen/App_TextSize_M</item>
         <item name="android:textColor">?colorOnSurface</item>
     </style>

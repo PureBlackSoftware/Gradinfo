@@ -1,6 +1,7 @@
 package com.pureblacksoft.gradinfo.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.activity.MainActivity
+import com.pureblacksoft.gradinfo.activity.PrefActivity
 import com.pureblacksoft.gradinfo.databinding.FragmentUserBinding
 
 class UserFragment : Fragment(R.layout.fragment_user)
@@ -37,9 +39,16 @@ class UserFragment : Fragment(R.layout.fragment_user)
         super.onViewCreated(view, savedInstanceState)
 
         //region Toolbar
-        activity.binding.imgIconMTB.setImageResource(R.drawable.ic_user_bwhite)
-        activity.binding.txtTitleMTB.text = getString(R.string.User_Title)
-        activity.binding.imgButtonMTB.setImageResource(R.drawable.ic_pref_bwhite)
+        activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_user_bwhite)
+        activity.binding.txtToolbarTitleMA.text = getString(R.string.User_Title)
+        activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_pref_bwhite)
+        //endregion
+
+        //region Buttons
+        activity.binding.imgToolbarButtonMA.setOnClickListener {
+            val intent = Intent(mContext, PrefActivity::class.java)
+            mContext.startActivity(intent)
+        }
         //endregion
     }
 
