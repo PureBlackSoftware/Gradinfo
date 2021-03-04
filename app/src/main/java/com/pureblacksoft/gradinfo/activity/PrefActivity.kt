@@ -2,21 +2,17 @@ package com.pureblacksoft.gradinfo.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.databinding.ActivityPrefBinding
+import com.pureblacksoft.gradinfo.function.PrefFun
+import com.pureblacksoft.gradinfo.function.StoreFun
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class PrefActivity : AppCompatActivity()
 {
-    companion object {
-        private const val ID_THEME_DEFAULT = 0
-        private const val ID_THEME_LIGHT = 1
-        private const val ID_THEME_DARK = 2
-
-        private var currentTheme = ID_THEME_DEFAULT
-    }
-
     private lateinit var binding: ActivityPrefBinding
+    private lateinit var storeFun: StoreFun
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +20,9 @@ class PrefActivity : AppCompatActivity()
         binding = ActivityPrefBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        checkCurrentTheme()
+        storeFun = StoreFun(this)
+
+        checkTheme()
 
         //region Buttons
         binding.imgToolbarBackPA.setOnClickListener {
@@ -32,27 +30,33 @@ class PrefActivity : AppCompatActivity()
         }
 
         binding.rltDefaultThemePA.setOnClickListener {
-            currentTheme = ID_THEME_DEFAULT
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            changeTheme(PrefFun.ID_THEME_DEFAULT)
         }
 
         binding.rltLightThemePA.setOnClickListener {
-            currentTheme = ID_THEME_LIGHT
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            changeTheme(PrefFun.ID_THEME_LIGHT)
         }
 
         binding.rltDarkThemePA.setOnClickListener {
-            currentTheme = ID_THEME_DARK
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            changeTheme(PrefFun.ID_THEME_DARK)
         }
         //endregion
     }
 
-    private fun checkCurrentTheme() {
-        when (currentTheme) {
-            ID_THEME_DEFAULT -> binding.imgDefaultThemePA.setImageResource(R.drawable.ic_check_v2)
-            ID_THEME_LIGHT -> binding.imgLightThemePA.setImageResource(R.drawable.ic_check_v2)
-            ID_THEME_DARK -> binding.imgDarkThemePA.setImageResource(R.drawable.ic_check_v2)
+    private fun checkTheme() {
+        when (PrefFun.currentThemeId) {
+            PrefFun.ID_THEME_DEFAULT -> binding.imgDefaultThemePA.setImageResource(R.drawable.ic_check_v2)
+            PrefFun.ID_THEME_LIGHT -> binding.imgLightThemePA.setImageResource(R.drawable.ic_check_v2)
+            PrefFun.ID_THEME_DARK -> binding.imgDarkThemePA.setImageResource(R.drawable.ic_check_v2)
+        }
+    }
+
+    private fun changeTheme(themeId: Int) {
+        if (PrefFun.currentThemeId != themeId) {
+            GlobalScope.launch {
+                storeFun.storePref(themeId)
+                finish()
+            }
         }
     }
 }
