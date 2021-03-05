@@ -66,7 +66,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         setGradAdapter()
         //endregion
 
-        //region Events
+        //region Event
         MainActivity.onSuccessfulService = {
             setGradAdapter()
         }

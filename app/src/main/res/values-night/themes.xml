@@ -21,6 +21,8 @@
         <item name="colorOnBackground">@color/OnBackground_Night</item>
         <item name="colorSurface">@color/Surface_Night</item>
         <item name="colorOnSurface">@color/OnSurface_Night</item>
+        <item name="colorError">@color/Error_Night</item>
+        <item name="colorOnError">@color/OnError_Night</item>
     </style>
 
 </resources>

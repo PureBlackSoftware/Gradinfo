@@ -44,7 +44,7 @@ class UserFragment : Fragment(R.layout.fragment_user)
         activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_pref_bwhite)
         //endregion
 
-        //region Buttons
+        //region Button
         activity.binding.imgToolbarButtonMA.setOnClickListener {
             val intent = Intent(mContext, PrefActivity::class.java)
             mContext.startActivity(intent)

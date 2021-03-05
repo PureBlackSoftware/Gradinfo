@@ -21,6 +21,8 @@
         <item name="colorOnBackground">@color/OnBackground</item>
         <item name="colorSurface">@color/Surface</item>
         <item name="colorOnSurface">@color/OnSurface</item>
+        <item name="colorError">@color/Error</item>
+        <item name="colorOnError">@color/OnError</item>
     </style>
 
 </resources>

@@ -24,7 +24,7 @@ class PrefActivity : AppCompatActivity()
 
         checkTheme()
 
-        //region Buttons
+        //region Button
         binding.imgToolbarBackPA.setOnClickListener {
             onBackPressed()
         }

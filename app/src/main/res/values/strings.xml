@@ -8,6 +8,10 @@
     <!-- endregion -->
 
     <!-- region MainActivity -->
+    <string name="Main_Conn_Fail_Title">"Bağlantı Başarısız!"</string>
+    <string name="Main_Conn_Fail_Content">"Lütfen cihazınızın internete bağlı olduğundan emin olun ve tekrar deneyin."</string>
+    <string name="Main_Conn_Fail_Button">"Tekrar Dene"</string>
+
     <!-- region HomeFragment -->
     <string name="Home_Title">"Ana Sayfa"</string>
     <!-- endregion -->

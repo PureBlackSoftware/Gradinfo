@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.databinding.ActivityMainBinding
+import com.pureblacksoft.gradinfo.dialog.InfoDialog
 import com.pureblacksoft.gradinfo.function.PrefFun
 import com.pureblacksoft.gradinfo.function.StoreFun
 import com.pureblacksoft.gradinfo.service.GradDataService
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity()
         startGradDataService()
         //endregion
 
-        //region Events
+        //region Event
         GradDataService.onSuccess = {
             binding.spinKitMA.visibility = View.GONE
 
@@ -55,6 +56,17 @@ class MainActivity : AppCompatActivity()
 
         GradDataService.onFailure = {
             binding.spinKitMA.visibility = View.GONE
+
+            //region Conn Fail Dialog
+            val builder = InfoDialog.alertBuilder(this)
+            builder.setCancelable(false)
+            builder.setTitle(R.string.Main_Conn_Fail_Title)
+            builder.setMessage(R.string.Main_Conn_Fail_Content)
+            builder.setPositiveButton(R.string.Main_Conn_Fail_Button) { _, _ ->
+                startGradDataService()
+            }
+            builder.show()
+            //endregion
         }
         //endregion
     }

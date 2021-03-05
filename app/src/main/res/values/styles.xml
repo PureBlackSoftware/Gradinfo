@@ -48,6 +48,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">?android:statusBarColor</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
         <item name="contentInsetStart">0dp</item>
         <item name="contentInsetEnd">0dp</item>
     </style>
@@ -143,6 +144,10 @@
 
     <style name="PureInfo.Text.Content.Card" parent="PureInfo.Text.Content">
         <item name="android:background">@drawable/shape_info</item>
+    </style>
+
+    <style name="PureInfo.Dialog" parent="PureInfo">
+        <item name="android:background">?colorError</item>
     </style>
     <!-- endregion -->
 

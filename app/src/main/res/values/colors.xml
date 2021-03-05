@@ -47,11 +47,15 @@
     <color name="OnBackground">@color/black</color>
     <color name="Surface">@color/red_light</color>
     <color name="OnSurface">@color/black</color>
+    <color name="Error">@color/Primary_Variant</color>
+    <color name="OnError">@color/On_Primary</color>
 
     <color name="Background_Night">@color/black</color>
     <color name="OnBackground_Night">@color/white</color>
     <color name="Surface_Night">@color/red_dark</color>
     <color name="OnSurface_Night">@color/white</color>
+    <color name="Error_Night">@color/Primary_Variant</color>
+    <color name="OnError_Night">@color/On_Primary</color>
     <!-- endregion -->
     <!-- endregion -->
 </resources>

@@ -18,20 +18,20 @@
 
     <LinearLayout
         android:id="@+id/lnrSearchSF"
-        style="@style/PureBox.Linear">
+        style="@style/PureBox.Linear"
+        android:layout_marginHorizontal="@dimen/App_Margin_S"
+        android:layout_marginTop="@dimen/App_Margin_S">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchSF"
             style="@style/PureBar.Search"
-            android:layout_marginHorizontal="@dimen/App_Margin_S"
-            android:layout_marginTop="@dimen/App_Margin_S"
+            android:layout_marginBottom="@dimen/App_Margin_S"
             app:queryHint="@string/Search_Query_Hint_Name" />
 
         <TextView
             android:id="@+id/txtNoResultSF"
             style="@style/PureInfo.Text.Content.Card"
-            android:layout_marginHorizontal="@dimen/App_Margin_S"
-            android:layout_marginTop="@dimen/App_Margin_S"
+            android:layout_marginBottom="@dimen/App_Margin_S"
             android:text="@string/Search_No_Result"
             android:visibility="gone" />
 
