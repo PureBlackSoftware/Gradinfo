@@ -87,10 +87,10 @@ class SearchFragment : Fragment(R.layout.fragment_search)
 
         binding.searchSF.setOnQueryTextFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
-                binding.scrollSF.visibility = View.GONE
+                binding.lnrInfoSF.visibility = View.GONE
                 binding.txtNoResultSF.visibility = View.GONE
             } else if (gradAdapter.itemCount == 0 && binding.txtNoResultSF.visibility == View.GONE) {
-                binding.scrollSF.visibility = View.VISIBLE
+                binding.lnrInfoSF.visibility = View.VISIBLE
             }
         }
         //endregion

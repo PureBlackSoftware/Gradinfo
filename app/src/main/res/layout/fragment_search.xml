@@ -6,16 +6,6 @@
     style="@style/PureRoot.Relative"
     tools:context=".fragment.SearchFragment">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollSF"
-        style="@style/PureBox.Scroll"
-        android:layout_margin="@dimen/App_Margin_S">
-
-        <LinearLayout style="@style/PureBox.Linear">
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
     <LinearLayout
         android:id="@+id/lnrSearchSF"
         style="@style/PureBox.Linear"
@@ -35,12 +25,32 @@
             android:text="@string/Search_No_Result"
             android:visibility="gone" />
 
+        <LinearLayout
+            android:id="@+id/lnrInfoSF"
+            style="@style/PureBox.Linear"
+            android:layout_marginBottom="@dimen/App_Margin_S"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                style="@style/PureInfo.Image"
+                android:layout_marginBottom="@dimen/App_Margin_S"
+                android:contentDescription="@string/Description_Image"
+                android:src="@drawable/img_search" />
+
+            <TextView
+                style="@style/PureInfo.Text.Content.Card"
+                android:layout_marginBottom="@dimen/App_Margin_S"
+                android:text="@string/Search_Info" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSF"
         style="@style/PureGrad.Recycler"
         android:layout_below="@+id/lnrSearchSF"
-        android:layout_margin="@dimen/App_Margin_S" />
+        android:layout_marginHorizontal="@dimen/App_Margin_S"
+        android:layout_marginBottom="@dimen/App_Margin_S" />
 
 </RelativeLayout>

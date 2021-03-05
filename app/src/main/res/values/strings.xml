@@ -21,6 +21,7 @@
     <string name="Search_Query_Hint_Name">"Öğrenci adı giriniz…"</string>
     <string name="Search_Query_Hint_Number">"Öğrenci numarası giriniz…"</string>
     <string name="Search_No_Result">"Hiç sonuç bulunamadı"</string>
+    <string name="Search_Info">"İsim ve numara aramaları arasında geçiş yapmak için (U) butonunu kullanın."</string>
     <!-- endregion -->
 
     <!-- region UserFragment -->

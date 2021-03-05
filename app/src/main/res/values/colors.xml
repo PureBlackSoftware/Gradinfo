@@ -17,8 +17,8 @@
     <color name="purple_light">#ae52d4</color>
     <color name="purple_dark">#4a0072</color>
     <color name="red">#f44336</color>
-    <color name="red_light">#ff7961</color>
-    <color name="red_dark">#ba000d</color>
+    <color name="red_light">#ffcdd2</color>
+    <color name="red_dark">#b71c1c</color>
     <!-- endregion -->
 
     <!-- region App Colors -->

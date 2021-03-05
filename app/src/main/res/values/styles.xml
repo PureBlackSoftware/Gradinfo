@@ -146,6 +146,12 @@
         <item name="android:background">@drawable/shape_info</item>
     </style>
 
+    <style name="PureInfo.Image" parent="PureInfo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
     <style name="PureInfo.Dialog" parent="PureInfo">
         <item name="android:background">?colorError</item>
     </style>
