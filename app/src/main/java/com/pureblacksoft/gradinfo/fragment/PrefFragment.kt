@@ -45,23 +45,25 @@ class PrefFragment : Fragment(R.layout.fragment_pref)
         activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_close)
         //endregion
 
-        checkTheme()
+        //region Theme Radio Group
+        when (PrefFun.currentThemeId) {
+            PrefFun.ID_THEME_DEFAULT -> binding.radGrpThemePF.check(binding.radBtnDefaultThemePF.id)
+            PrefFun.ID_THEME_LIGHT -> binding.radGrpThemePF.check(binding.radBtnLightThemePF.id)
+            PrefFun.ID_THEME_DARK -> binding.radGrpThemePF.check(binding.radBtnDarkThemePF.id)
+        }
+
+        binding.radGrpThemePF.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                binding.radBtnDefaultThemePF.id -> changeTheme(PrefFun.ID_THEME_DEFAULT)
+                binding.radBtnLightThemePF.id -> changeTheme(PrefFun.ID_THEME_LIGHT)
+                binding.radBtnDarkThemePF.id -> changeTheme(PrefFun.ID_THEME_DARK)
+            }
+        }
+        //endregion
 
         //region Button
         activity.binding.imgToolbarButtonMA.setOnClickListener {
             activity.onBackPressed()
-        }
-
-        binding.rltDefaultThemePF.setOnClickListener {
-            changeTheme(PrefFun.ID_THEME_DEFAULT)
-        }
-
-        binding.rltLightThemePF.setOnClickListener {
-            changeTheme(PrefFun.ID_THEME_LIGHT)
-        }
-
-        binding.rltDarkThemePF.setOnClickListener {
-            changeTheme(PrefFun.ID_THEME_DARK)
         }
         //endregion
     }
@@ -77,14 +79,6 @@ class PrefFragment : Fragment(R.layout.fragment_pref)
 
         _context = null
         _activity = null
-    }
-
-    private fun checkTheme() {
-        when (PrefFun.currentThemeId) {
-            PrefFun.ID_THEME_DEFAULT -> binding.imgDefaultThemePF.setImageResource(R.drawable.ic_check_full)
-            PrefFun.ID_THEME_LIGHT -> binding.imgLightThemePF.setImageResource(R.drawable.ic_check_full)
-            PrefFun.ID_THEME_DARK -> binding.imgDarkThemePF.setImageResource(R.drawable.ic_check_full)
-        }
     }
 
     private fun changeTheme(themeId: Int) {

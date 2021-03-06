@@ -7,72 +7,33 @@
 
     <LinearLayout
         style="@style/PureBox.Linear"
+        android:layout_marginHorizontal="@dimen/App_Margin_XL"
         android:layout_marginTop="@dimen/App_Margin_XL">
 
         <TextView
             style="@style/PureButton.Text.Title"
-            android:layout_marginStart="@dimen/App_Margin_XL"
             android:layout_marginBottom="@dimen/App_Margin_L"
             android:text="@string/Pref_Theme" />
 
-        <RelativeLayout
-            android:id="@+id/rltDefaultThemePF"
-            style="@style/PureButton.Relative"
-            android:layout_marginStart="@dimen/App_Margin_XL"
-            android:layout_marginBottom="@dimen/App_Margin_M">
+        <RadioGroup
+            android:id="@+id/radGrpThemePF"
+            style="@style/PureButton.Radio.Group">
 
-            <ImageView
-                android:id="@+id/imgDefaultThemePF"
-                style="@style/PureButton.Relative.Image"
-                android:contentDescription="@string/Description_Icon"
-                android:src="@drawable/ic_check" />
-
-            <TextView
-                style="@style/PureButton.Relative.Text"
-                android:layout_marginStart="@dimen/App_Margin_M"
-                android:layout_toEndOf="@+id/imgDefaultThemePF"
+            <RadioButton
+                android:id="@+id/radBtnDefaultThemePF"
+                style="@style/PureButton.Radio.Button"
                 android:text="@string/Pref_Theme_Default" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rltLightThemePF"
-            style="@style/PureButton.Relative"
-            android:layout_marginStart="@dimen/App_Margin_XL"
-            android:layout_marginBottom="@dimen/App_Margin_M">
-
-            <ImageView
-                android:id="@+id/imgLightThemePF"
-                style="@style/PureButton.Relative.Image"
-                android:contentDescription="@string/Description_Icon"
-                android:src="@drawable/ic_check" />
-
-            <TextView
-                style="@style/PureButton.Relative.Text"
-                android:layout_marginStart="@dimen/App_Margin_M"
-                android:layout_toEndOf="@+id/imgLightThemePF"
+            <RadioButton
+                android:id="@+id/radBtnLightThemePF"
+                style="@style/PureButton.Radio.Button"
                 android:text="@string/Pref_Theme_Light" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rltDarkThemePF"
-            style="@style/PureButton.Relative"
-            android:layout_marginStart="@dimen/App_Margin_XL">
-
-            <ImageView
-                android:id="@+id/imgDarkThemePF"
-                style="@style/PureButton.Relative.Image"
-                android:contentDescription="@string/Description_Icon"
-                android:src="@drawable/ic_check" />
-
-            <TextView
-                style="@style/PureButton.Relative.Text"
-                android:layout_marginStart="@dimen/App_Margin_M"
-                android:layout_toEndOf="@+id/imgDarkThemePF"
+            <RadioButton
+                android:id="@+id/radBtnDarkThemePF"
+                style="@style/PureButton.Radio.Button"
                 android:text="@string/Pref_Theme_Dark" />
-
-        </RelativeLayout>
+        </RadioGroup>
 
     </LinearLayout>
 
