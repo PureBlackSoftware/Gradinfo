@@ -28,12 +28,6 @@
 
         </activity>
 
-        <activity
-            android:name=".activity.PrefActivity"
-            android:configChanges="orientation"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-
         <service
             android:name=".service.GradDataService"
             android:permission="android.permission.BIND_JOB_SERVICE" />

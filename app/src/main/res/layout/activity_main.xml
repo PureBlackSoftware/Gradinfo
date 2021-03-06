@@ -19,7 +19,7 @@
                     style="@style/PureBar.Relative.Image"
                     android:layout_marginHorizontal="@dimen/App_Margin_M"
                     android:contentDescription="@string/Description_Icon"
-                    android:src="@drawable/ic_home_bwhite" />
+                    android:src="@drawable/ic_home" />
 
                 <TextView
                     android:id="@+id/txtToolbarTitleMA"
@@ -33,7 +33,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginHorizontal="@dimen/App_Margin_M"
                     android:contentDescription="@string/Description_Icon"
-                    android:src="@drawable/ic_filter_bwhite" />
+                    android:src="@drawable/ic_filter" />
 
             </RelativeLayout>
 

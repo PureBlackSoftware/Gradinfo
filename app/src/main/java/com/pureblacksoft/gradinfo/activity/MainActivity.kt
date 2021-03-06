@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity()
     }
 
     lateinit var binding: ActivityMainBinding
+    lateinit var storeFun: StoreFun
     private lateinit var navController: NavController
-    private lateinit var storeFun: StoreFun
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

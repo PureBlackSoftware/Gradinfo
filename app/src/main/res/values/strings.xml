@@ -11,6 +11,7 @@
     <string name="Main_Conn_Fail_Title">"Bağlantı Başarısız!"</string>
     <string name="Main_Conn_Fail_Content">"Lütfen cihazınızın internete bağlı olduğundan emin olun ve tekrar deneyin."</string>
     <string name="Main_Conn_Fail_Button">"Tekrar Dene"</string>
+    <!-- endregion -->
 
     <!-- region HomeFragment -->
     <string name="Home_Title">"Ana Sayfa"</string>
@@ -27,9 +28,8 @@
     <!-- region UserFragment -->
     <string name="User_Title">"Kullanıcı"</string>
     <!-- endregion -->
-    <!-- endregion -->
 
-    <!-- region PrefActivity -->
+    <!-- region PrefFragment -->
     <string name="Pref_Title">"Tercihler"</string>
     <string name="Pref_Theme">"Uygulama Teması"</string>
     <string name="Pref_Theme_Default">"Varsayılan Tema"</string>

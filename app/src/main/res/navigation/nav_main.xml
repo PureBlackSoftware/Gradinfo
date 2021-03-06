@@ -22,6 +22,22 @@
         android:id="@+id/userFragment"
         android:name="com.pureblacksoft.gradinfo.fragment.UserFragment"
         android:label="@string/User_Title"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user">
+
+        <action
+            android:id="@+id/action_userFragment_to_prefFragment"
+            app:destination="@id/prefFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/prefFragment"
+        android:name="com.pureblacksoft.gradinfo.fragment.PrefFragment"
+        android:label="@string/Pref_Title"
+        tools:layout="@layout/fragment_pref" />
 
 </navigation>
