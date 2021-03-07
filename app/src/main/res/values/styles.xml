@@ -96,9 +96,34 @@
     <!-- region PureButton -->
     <style name="PureButton" />
 
-    <style name="PureButton.Text.Title" parent="PureButton">
+    <style name="PureButton.Linear" parent="PureButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="PureButton.Linear.Card" parent="PureButton.Linear">
+        <item name="android:paddingStart">@dimen/App_Padding_S</item>
+        <item name="android:paddingEnd">@dimen/App_Padding_S</item>
+        <item name="android:paddingBottom">@dimen/App_Padding_S</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PureButton.Text" parent="PureButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PureButton.Text.Selectable" parent="PureButton.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="android:foreground">@drawable/ripple_selectable</item>
+        <item name="android:background">@drawable/shape_button</item>
+    </style>
+
+    <style name="PureButton.Text.Title" parent="PureButton.Text">
         <item name="android:textSize">@dimen/App_TextSize_L</item>
         <item name="android:textColor">?colorOnSecondary</item>
     </style>
@@ -116,6 +141,42 @@
         <item name="android:drawablePadding">5dp</item>
         <item name="android:textSize">@dimen/App_TextSize_L</item>
         <item name="android:textColor">?colorOnBackground</item>
+        <item name="android:foreground">@drawable/ripple_selectable</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region PureSpinner -->
+    <style name="PureSpinner" />
+
+    <style name="PureSpinner.Dialog" parent="PureSpinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:spinnerMode">dialog</item>
+        <item name="android:background">?colorError</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region PureDialog -->
+    <style name="PureDialog" />
+
+    <style name="PureDialog.Linear" parent="PureDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">400dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">?colorError</item>
+    </style>
+
+    <style name="PureDialog.Text" parent="PureDialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textColor">?colorOnError</item>
+    </style>
+
+    <style name="PureDialog.Alert" parent="PureDialog">
+        <item name="android:background">?colorError</item>
     </style>
     <!-- endregion -->
 
@@ -146,10 +207,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:adjustViewBounds">true</item>
-    </style>
-
-    <style name="PureInfo.Dialog" parent="PureInfo">
-        <item name="android:background">?colorError</item>
     </style>
     <!-- endregion -->
 

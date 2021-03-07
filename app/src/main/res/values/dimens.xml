@@ -7,6 +7,9 @@
     <dimen name="App_Margin_L">20dp</dimen>
     <dimen name="App_Margin_XL">40dp</dimen>
 
+    <dimen name="App_Padding_S">5dp</dimen>
+    <dimen name="App_Padding_M">10dp</dimen>
+
     <dimen name="App_TextSize_S">16sp</dimen>
     <dimen name="App_TextSize_M">18sp</dimen>
     <dimen name="App_TextSize_L">20sp</dimen>

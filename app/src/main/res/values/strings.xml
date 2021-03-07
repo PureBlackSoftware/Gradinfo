@@ -37,6 +37,42 @@
     <string name="Pref_Theme_Dark">"Koyu Tema"</string>
     <!-- endregion -->
 
+    <!-- region FilterDialog -->
+    <string name="Filter_Title">"Filtrele"</string>
+
+    <string name="Filter_Degree_Title">"Lisans"</string>
+    <string name="Filter_Degree_All">"Tüm Lisanslar"</string>
+    <string name="Filter_Degree_Cmp_Eng">"Bilgisayar Mühendisliği"</string>
+    <string name="Filter_Degree_Cmp_Eng_EE">"Bilgisayar Mühendisliği (İÖ)"</string>
+    <string name="Filter_Degree_Med_Eng">"Biyomedikal Mühendisliği"</string>
+    <string name="Filter_Degree_Env_Eng">"Çevre Mühendisliği"</string>
+    <string name="Filter_Degree_Elc_Eng">"Elektronik ve Haberleşme Mühendisliği"</string>
+    <string name="Filter_Degree_Elc_Eng_EE">"Elektronik ve Haberleşme Mühendisliği (İÖ)"</string>
+    <string name="Filter_Degree_Ind_Eng">"Endüstri Mühendisliği"</string>
+    <string name="Filter_Degree_Cvl_Eng">"İnşaat Mühendisliği"</string>
+    <string name="Filter_Degree_Mec_Eng">"Makine Mühendisliği"</string>
+    <string name="Filter_Degree_Mec_Eng_EE">"Makine Mühendisliği (İÖ)"</string>
+    <string name="Filter_Degree_Tex_Eng">"Tekstil Mühendisliği"</string>
+
+    <string name="Filter_Year_Title">"Mezuniyet Yılı"</string>
+    <string name="Filter_Year_All">"Tüm Yıllar"</string>
+    <string name="Filter_Year_2010">"2010"</string>
+    <string name="Filter_Year_2011">"2011"</string>
+    <string name="Filter_Year_2012">"2012"</string>
+    <string name="Filter_Year_2013">"2013"</string>
+    <string name="Filter_Year_2014">"2014"</string>
+    <string name="Filter_Year_2015">"2015"</string>
+    <string name="Filter_Year_2016">"2016"</string>
+    <string name="Filter_Year_2017">"2017"</string>
+    <string name="Filter_Year_2018">"2018"</string>
+    <string name="Filter_Year_2019">"2019"</string>
+    <string name="Filter_Year_2020">"2020"</string>
+    <string name="Filter_Year_2021">"2021"</string>
+
+    <string name="Filter_Apply">"Uygula"</string>
+    <string name="Filter_Cancel">"İptal Et"</string>
+    <!-- endregion -->
+
     <!-- region Grad -->
     <string name="Grad_Number_Sample">"1170606018"</string>
     <string name="Grad_Name_Sample">"Murat BIYIK"</string>

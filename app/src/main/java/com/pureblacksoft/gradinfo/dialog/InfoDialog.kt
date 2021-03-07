@@ -9,7 +9,7 @@ class InfoDialog
 {
     companion object {
         fun alertBuilder(context: Context): AlertDialog.Builder {
-            return AlertDialog.Builder(ContextThemeWrapper(context, R.style.PureInfo_Dialog))
+            return AlertDialog.Builder(ContextThemeWrapper(context, R.style.PureDialog_Alert))
         }
     }
 }
