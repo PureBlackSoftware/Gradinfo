@@ -9,6 +9,8 @@
 
     <dimen name="App_Padding_S">5dp</dimen>
     <dimen name="App_Padding_M">10dp</dimen>
+    <dimen name="App_Padding_L">20dp</dimen>
+    <dimen name="App_Padding_XL">40dp</dimen>
 
     <dimen name="App_TextSize_S">16sp</dimen>
     <dimen name="App_TextSize_M">18sp</dimen>

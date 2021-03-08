@@ -14,7 +14,8 @@ import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.activity.MainActivity
 import com.pureblacksoft.gradinfo.adapter.GradAdapter
 import com.pureblacksoft.gradinfo.databinding.FragmentHomeBinding
-import com.pureblacksoft.gradinfo.service.GradDataService
+import com.pureblacksoft.gradinfo.dialog.FilterDialog
+import com.pureblacksoft.gradinfo.service.DataService
 
 class HomeFragment : Fragment(R.layout.fragment_home)
 {
@@ -48,6 +49,8 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val filterDialog = FilterDialog(mContext)
+
         //region Toolbar
         activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_home)
         activity.binding.txtToolbarTitleMA.text = getString(R.string.Home_Title)
@@ -66,15 +69,51 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         setGradAdapter()
         //endregion
 
+        //region Check Filter
+        fun checkFilter() {
+            if (FilterDialog.currentDegreeId != 0 || FilterDialog.currentYearId != 0) {
+                activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_filter_full)
+            } else {
+                activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_filter)
+            }
+        }
+
+        checkFilter()
+        //endregion
+
         //region Event
         MainActivity.onSuccessfulService = {
             setGradAdapter()
+        }
+
+        FilterDialog.onCancel = {
+            filterDialog.dismiss()
+        }
+
+        FilterDialog.onApply = {
+            filterDialog.dismiss()
+            setGradAdapter()
+            checkFilter()
+        }
+        //endregion
+
+        //region Button
+        activity.binding.imgToolbarButtonMA.setOnClickListener {
+            filterDialog.show()
+        }
+
+        activity.binding.bottomNavMA.setOnNavigationItemReselectedListener {
+            if (it.itemId == R.id.homeFragment) {
+                linearManager.smoothScrollToPosition(binding.recyclerHF, null, 0)
+            }
         }
         //endregion
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+
+        activity.binding.bottomNavMA.setOnNavigationItemReselectedListener(null)
 
         _binding = null
     }
@@ -87,10 +126,10 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     }
 
     private fun setGradAdapter() {
-        if (_binding != null && GradDataService.gradList.size != 0) {
+        if (_binding != null && DataService.gradList.size != 0) {
             Log.d(TAG, "setGradAdapter: Running")
 
-            gradAdapter = GradAdapter(GradDataService.gradList)
+            gradAdapter = GradAdapter(DataService.gradList)
             binding.recyclerHF.adapter = gradAdapter
         }
     }

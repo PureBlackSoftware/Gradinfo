@@ -14,7 +14,7 @@ import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.activity.MainActivity
 import com.pureblacksoft.gradinfo.adapter.GradAdapter
 import com.pureblacksoft.gradinfo.databinding.FragmentSearchBinding
-import com.pureblacksoft.gradinfo.service.GradDataService
+import com.pureblacksoft.gradinfo.service.DataService
 
 class SearchFragment : Fragment(R.layout.fragment_search)
 {
@@ -110,10 +110,10 @@ class SearchFragment : Fragment(R.layout.fragment_search)
     }
 
     private fun setGradAdapter() {
-        if (_binding != null && GradDataService.gradList.size != 0) {
+        if (_binding != null && DataService.gradList.size != 0) {
             Log.d(TAG, "setGradAdapter: Running")
 
-            gradAdapter = GradAdapter(GradDataService.gradList)
+            gradAdapter = GradAdapter(DataService.gradList)
             binding.recyclerSF.adapter = gradAdapter
             gradAdapter.filter.filter("")
         }

@@ -14,11 +14,13 @@ import com.pureblacksoft.gradinfo.databinding.ActivityMainBinding
 import com.pureblacksoft.gradinfo.dialog.InfoDialog
 import com.pureblacksoft.gradinfo.function.PrefFun
 import com.pureblacksoft.gradinfo.function.StoreFun
-import com.pureblacksoft.gradinfo.service.GradDataService
+import com.pureblacksoft.gradinfo.service.DataService
 
 class MainActivity : AppCompatActivity()
 {
     companion object {
+        private var dataLoaded = false
+
         var onSuccessfulService: (() -> Unit)? = null
     }
 
@@ -43,18 +45,21 @@ class MainActivity : AppCompatActivity()
         binding.bottomNavMA.itemIconTintList = null
         //endregion
 
-        //region Get Grad Data
-        startGradDataService()
+        //region Load Data
+        if (!dataLoaded) {
+            startDataService()
+            dataLoaded = true
+        }
         //endregion
 
         //region Event
-        GradDataService.onSuccess = {
+        DataService.onSuccess = {
             binding.spinKitMA.visibility = View.GONE
 
             onSuccessfulService?.invoke()
         }
 
-        GradDataService.onFailure = {
+        DataService.onFailure = {
             binding.spinKitMA.visibility = View.GONE
 
             //region Conn Fail Dialog
@@ -63,7 +68,7 @@ class MainActivity : AppCompatActivity()
             builder.setTitle(R.string.Main_Conn_Fail_Title)
             builder.setMessage(R.string.Main_Conn_Fail_Content)
             builder.setPositiveButton(R.string.Main_Conn_Fail_Button) { _, _ ->
-                startGradDataService()
+                startDataService()
             }
             builder.show()
             //endregion
@@ -78,10 +83,10 @@ class MainActivity : AppCompatActivity()
         })
     }
 
-    private fun startGradDataService() {
+    private fun startDataService() {
         binding.spinKitMA.visibility = View.VISIBLE
 
-        val intent = Intent(this, GradDataService::class.java)
-        GradDataService.enqueueWork(this, intent)
+        val intent = Intent(this, DataService::class.java)
+        DataService.enqueueWork(this, intent)
     }
 }

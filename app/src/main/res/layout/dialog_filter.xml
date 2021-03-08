@@ -3,6 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/PureDialog.Linear"
+    android:paddingHorizontal="@dimen/App_Padding_M"
+    android:paddingTop="@dimen/App_Padding_M"
     tools:context=".dialog.FilterDialog">
 
     <TextView
@@ -18,7 +20,7 @@
 
     <Spinner
         android:id="@+id/spnDegreeFD"
-        style="@style/PureSpinner"
+        style="@style/PureSpinner.Dialog"
         android:layout_marginBottom="@dimen/App_Margin_S"
         android:prompt="@string/Filter_Degree_Title" />
 
@@ -35,7 +37,7 @@
 
     <Spinner
         android:id="@+id/spnYearFD"
-        style="@style/PureSpinner"
+        style="@style/PureSpinner.Dialog"
         android:layout_marginBottom="@dimen/App_Margin_S"
         android:prompt="@string/Filter_Year_Title" />
 

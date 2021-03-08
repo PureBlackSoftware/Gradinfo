@@ -117,7 +117,7 @@
     <style name="PureButton.Text.Selectable" parent="PureButton.Text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
         <item name="android:textColor">?colorOnSurface</item>
         <item name="android:foreground">@drawable/ripple_selectable</item>
         <item name="android:background">@drawable/shape_button</item>
@@ -152,7 +152,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:spinnerMode">dialog</item>
-        <item name="android:background">?colorError</item>
+        <item name="android:theme">@style/PureDialog.Spinner</item>
     </style>
     <!-- endregion -->
 
@@ -171,11 +171,15 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">@dimen/App_TextSize_M</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
         <item name="android:textColor">?colorOnError</item>
     </style>
 
     <style name="PureDialog.Alert" parent="PureDialog">
+        <item name="android:background">?colorError</item>
+    </style>
+
+    <style name="PureDialog.Spinner" parent="PureDialog">
         <item name="android:background">?colorError</item>
     </style>
     <!-- endregion -->

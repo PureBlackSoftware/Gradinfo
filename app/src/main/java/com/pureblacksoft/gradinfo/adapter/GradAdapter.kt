@@ -69,7 +69,7 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
             binding.txtNumberGC.text = grad.number.toString()
             binding.txtNameGC.text = grad.name
             binding.txtDegreeGC.text = grad.degree
-            binding.txtYearGC.text = grad.year.toString()
+            binding.txtYearGC.text = grad.year
             Glide.with(context).load(grad.image).into(binding.imgGradGC)
 
             binding.root.setOnClickListener {}
