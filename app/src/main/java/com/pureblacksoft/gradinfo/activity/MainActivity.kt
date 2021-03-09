@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity()
         })
     }
 
-    private fun startDataService() {
+    fun startDataService() {
         binding.spinKitMA.visibility = View.VISIBLE
 
         val intent = Intent(this, DataService::class.java)

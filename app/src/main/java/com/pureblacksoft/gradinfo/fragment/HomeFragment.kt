@@ -92,8 +92,9 @@ class HomeFragment : Fragment(R.layout.fragment_home)
 
         FilterDialog.onApply = {
             filterDialog.dismiss()
-            setGradAdapter()
             checkFilter()
+            setGradAdapter()
+            activity.startDataService()
         }
         //endregion
 
@@ -129,7 +130,9 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         if (_binding != null && DataService.gradList.size != 0) {
             Log.d(TAG, "setGradAdapter: Running")
 
-            gradAdapter = GradAdapter(DataService.gradList)
+            gradAdapter = if (FilterDialog.filterActive) GradAdapter(DataService.filteredGradList)
+            else GradAdapter(DataService.gradList)
+
             binding.recyclerHF.adapter = gradAdapter
         }
     }

@@ -9,6 +9,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.data.Grad
+import com.pureblacksoft.gradinfo.dialog.FilterDialog
 import org.json.JSONException
 
 class DataService : JobIntentService()
@@ -17,12 +18,13 @@ class DataService : JobIntentService()
         private const val TAG = "DataService"
 
         private const val URL_GRADINFO = "https://pureblack.000webhostapp.com/gradinfo/"
-        private const val URL_DATA_GRAD = URL_GRADINFO + "script/db_data.php"
+        private const val URL_DATA = URL_GRADINFO + "script/db_data.php"
         private const val URL_IMAGE_GRAD = URL_GRADINFO + "image/grad/"
 
         var degreeList = mutableListOf<String>()
         var yearList = mutableListOf<String>()
         var gradList = mutableListOf<Grad>()
+        var filteredGradList = mutableListOf<Grad>()
 
         var onSuccess: (() -> Unit)? = null
         var onFailure: (() -> Unit)? = null
@@ -41,12 +43,35 @@ class DataService : JobIntentService()
     override fun onHandleWork(intent: Intent) {
         Log.d(TAG, "onHandleWork: Running")
 
+        if (FilterDialog.filterActive) {
+            requestFilteredData()
+        } else {
+            requestData()
+        }
+    }
+
+    override fun onStopCurrentWork(): Boolean {
+        Log.d(TAG, "onStopCurrentWork: Running")
+
+        return super.onStopCurrentWork()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.d(TAG, "onDestroy: Running")
+    }
+
+    private fun requestData() {
+        Log.d(TAG, "requestData: Running")
+
         degreeList.add(getString(R.string.Filter_Degree_All))
         yearList.add(getString(R.string.Filter_Year_All))
 
-        val stringRequest = JsonObjectRequest(Request.Method.GET, URL_DATA_GRAD, null,
+        val dataURL = "$URL_DATA?degree_id=0&year_id=0"
+        val jsonRequest = JsonObjectRequest(Request.Method.GET, dataURL, null,
             { response ->
-                Log.d(TAG, "Connection successful: $URL_DATA_GRAD")
+                Log.d(TAG, "Connection successful: $dataURL")
 
                 try {
                     //region Degree Data
@@ -76,6 +101,8 @@ class DataService : JobIntentService()
                     //endregion
 
                     //region Grad Data
+                    gradList.clear()
+
                     val gradArray = response.getJSONArray("grad_array")
                     val gaLength = gradArray.length()
                     for (i in 0 until gaLength) {
@@ -104,24 +131,61 @@ class DataService : JobIntentService()
                 }
             },
             { error ->
-                Log.d(TAG, "Connection failed: $URL_DATA_GRAD")
+                Log.d(TAG, "Connection failed: $dataURL")
                 Log.e(TAG, error.toString())
 
                 onFailure?.invoke()
             })
 
-        Volley.newRequestQueue(this).add(stringRequest)
+        Volley.newRequestQueue(this).add(jsonRequest)
     }
 
-    override fun onStopCurrentWork(): Boolean {
-        Log.d(TAG, "onStopCurrentWork: Running")
+    private fun requestFilteredData() {
+        Log.d(TAG, "requestFilteredData: Running")
 
-        return super.onStopCurrentWork()
-    }
+        val filteredDataURL = "$URL_DATA?degree_id=${FilterDialog.currentDegreeId}&year_id=${FilterDialog.currentYearId}"
+        val jsonRequest = JsonObjectRequest(Request.Method.GET, filteredDataURL, null,
+            { response ->
+                Log.d(TAG, "Connection successful: $filteredDataURL")
 
-    override fun onDestroy() {
-        super.onDestroy()
+                try {
+                    //region Filtered Grad Data
+                    filteredGradList.clear()
 
-        Log.d(TAG, "onDestroy: Running")
+                    val filteredGradArray = response.getJSONArray("grad_array")
+                    val fgaLength = filteredGradArray.length()
+                    for (i in 0 until fgaLength) {
+                        if (isStopped) return@JsonObjectRequest
+
+                        val filteredGradObject = filteredGradArray.getJSONObject(i)
+                        filteredGradList.add(
+                            Grad(
+                                number = filteredGradObject.getInt("grad_number"),
+                                name = filteredGradObject.getString("grad_name"),
+                                degree = filteredGradObject.getString("degree_name"),
+                                year = filteredGradObject.getString("year_name"),
+                                image = URL_IMAGE_GRAD + filteredGradObject.getString("grad_image")
+                            )
+                        )
+
+                        Log.d(TAG, "Filtered Grad ${i + 1}: Added")
+                    }
+                    //endregion
+
+                    onSuccess?.invoke()
+                } catch (e: JSONException) {
+                    Log.e(TAG, e.toString())
+
+                    onFailure?.invoke()
+                }
+            },
+            { error ->
+                Log.d(TAG, "Connection failed: $filteredDataURL")
+                Log.e(TAG, error.toString())
+
+                onFailure?.invoke()
+            })
+
+        Volley.newRequestQueue(this).add(jsonRequest)
     }
 }

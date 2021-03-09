@@ -12,6 +12,8 @@ import com.pureblacksoft.gradinfo.service.DataService
 class FilterDialog(context: Context) : Dialog(context), AdapterView.OnItemSelectedListener
 {
     companion object {
+        var filterActive = false
+
         var currentDegreeId = 0
         var currentYearId = 0
 
@@ -53,6 +55,7 @@ class FilterDialog(context: Context) : Dialog(context), AdapterView.OnItemSelect
         }
 
         binding.txtApplyFD.setOnClickListener {
+            filterActive = true
             currentDegreeId = selectedDegreeId
             currentYearId = selectedYearId
 
