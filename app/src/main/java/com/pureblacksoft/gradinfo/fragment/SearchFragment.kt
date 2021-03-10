@@ -2,6 +2,7 @@ package com.pureblacksoft.gradinfo.fragment
 
 import android.content.Context
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -100,11 +101,17 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         val criteriaDialog = CriteriaDialog(mContext)
 
         fun checkCriteria() {
-            if (CriteriaDialog.currentCriteriaId != 0) {
+            if (CriteriaDialog.currentCriteriaId == 1) {
                 activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_criteria_full)
+                binding.searchSF.inputType = InputType.TYPE_CLASS_NUMBER
+                binding.searchSF.queryHint = getString(R.string.Search_Query_Hint_Number)
             } else {
                 activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_criteria)
+                binding.searchSF.inputType = InputType.TYPE_CLASS_TEXT
+                binding.searchSF.queryHint = getString(R.string.Search_Query_Hint_Name)
             }
+
+            binding.searchSF.setQuery(null, false)
         }
 
         checkCriteria()
@@ -114,6 +121,10 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         CriteriaDialog.onChange = {
             criteriaDialog.dismiss()
             checkCriteria()
+        }
+
+        CriteriaDialog.onNoChange = {
+            criteriaDialog.dismiss()
         }
         //endregion
 

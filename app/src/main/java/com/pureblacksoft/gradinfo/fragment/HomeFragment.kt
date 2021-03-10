@@ -114,8 +114,6 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     override fun onDestroyView() {
         super.onDestroyView()
 
-        activity.binding.bottomNavMA.setOnNavigationItemReselectedListener(null)
-
         _binding = null
     }
 

@@ -11,6 +11,7 @@ class CriteriaDialog(context: Context) : Dialog(context)
         var currentCriteriaId = 0
 
         var onChange: (() -> Unit)? = null
+        var onNoChange: (() -> Unit)? = null
     }
 
     private lateinit var binding: DialogCriteriaBinding
@@ -27,6 +28,8 @@ class CriteriaDialog(context: Context) : Dialog(context)
                 currentCriteriaId = 0
 
                 onChange?.invoke()
+            } else {
+                onNoChange?.invoke()
             }
         }
 
@@ -35,6 +38,8 @@ class CriteriaDialog(context: Context) : Dialog(context)
                 currentCriteriaId = 1
 
                 onChange?.invoke()
+            } else {
+                onNoChange?.invoke()
             }
         }
         //endregion

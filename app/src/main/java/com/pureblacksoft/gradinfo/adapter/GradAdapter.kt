@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.pureblacksoft.gradinfo.data.Grad
 import com.pureblacksoft.gradinfo.databinding.CardGradBinding
+import com.pureblacksoft.gradinfo.dialog.CriteriaDialog
 import java.util.*
 
 class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapter<GradAdapter.ViewHolder>(), Filterable
@@ -41,9 +42,14 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
                     resultList.clear()
                 } else {
                     for (grad in gradList) {
-                        if (grad.name.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(
-                                Locale.ROOT))) {
-                            resultList.add(grad)
+                        if (CriteriaDialog.currentCriteriaId == 1) {
+                            if (grad.number.toString().contains(charSearch)) {
+                                resultList.add(grad)
+                            }
+                        } else {
+                            if (grad.name.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))) {
+                                resultList.add(grad)
+                            }
                         }
                     }
                 }
