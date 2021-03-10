@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/txtNoResultSF"
-            style="@style/PureInfo.Text.Content.Card"
+            style="@style/PureInfo.Text.Card"
             android:layout_marginBottom="@dimen/App_Margin_S"
             android:text="@string/Search_No_Result"
             android:visibility="gone" />
@@ -38,7 +38,7 @@
                 android:src="@drawable/img_search" />
 
             <TextView
-                style="@style/PureInfo.Text.Content.Card"
+                style="@style/PureInfo.Text.Card"
                 android:layout_marginBottom="@dimen/App_Margin_S"
                 android:text="@string/Search_Info" />
 

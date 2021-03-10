@@ -49,8 +49,6 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val filterDialog = FilterDialog(mContext)
-
         //region Toolbar
         activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_home)
         activity.binding.txtToolbarTitleMA.text = getString(R.string.Home_Title)
@@ -69,7 +67,9 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         setGradAdapter()
         //endregion
 
-        //region Check Filter
+        //region Filter
+        val filterDialog = FilterDialog(mContext)
+
         fun checkFilter() {
             if (FilterDialog.currentDegreeId != 0 || FilterDialog.currentYearId != 0) {
                 activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_filter_full)

@@ -14,6 +14,7 @@ import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.activity.MainActivity
 import com.pureblacksoft.gradinfo.adapter.GradAdapter
 import com.pureblacksoft.gradinfo.databinding.FragmentSearchBinding
+import com.pureblacksoft.gradinfo.dialog.CriteriaDialog
 import com.pureblacksoft.gradinfo.service.DataService
 
 class SearchFragment : Fragment(R.layout.fragment_search)
@@ -51,7 +52,7 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         //region Toolbar
         activity.binding.imgToolbarIconMA.setImageResource(R.drawable.ic_search)
         activity.binding.txtToolbarTitleMA.text = getString(R.string.Search_Title)
-        activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_parse)
+        activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_criteria)
         //endregion
 
         //region RecyclerView
@@ -92,6 +93,33 @@ class SearchFragment : Fragment(R.layout.fragment_search)
             } else if (gradAdapter.itemCount == 0 && binding.txtNoResultSF.visibility == View.GONE) {
                 binding.lnrInfoSF.visibility = View.VISIBLE
             }
+        }
+        //endregion
+
+        //region Criteria
+        val criteriaDialog = CriteriaDialog(mContext)
+
+        fun checkCriteria() {
+            if (CriteriaDialog.currentCriteriaId != 0) {
+                activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_criteria_full)
+            } else {
+                activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_criteria)
+            }
+        }
+
+        checkCriteria()
+        //endregion
+
+        //region Event
+        CriteriaDialog.onChange = {
+            criteriaDialog.dismiss()
+            checkCriteria()
+        }
+        //endregion
+
+        //region Button
+        activity.binding.imgToolbarButtonMA.setOnClickListener {
+            criteriaDialog.show()
         }
         //endregion
     }

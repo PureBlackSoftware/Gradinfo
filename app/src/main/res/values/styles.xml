@@ -168,11 +168,16 @@
     </style>
 
     <style name="PureDialog.Text" parent="PureDialog">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">@dimen/App_TextSize_M</item>
         <item name="android:textColor">?colorOnError</item>
+    </style>
+
+    <style name="PureDialog.Text.Title" parent="PureDialog.Text">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
     </style>
 
     <style name="PureDialog.Alert" parent="PureDialog">
@@ -187,15 +192,7 @@
     <!-- region PureInfo -->
     <style name="PureInfo" />
 
-    <style name="PureInfo.Text.Title" parent="PureInfo">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSecondary</item>
-    </style>
-
-    <style name="PureInfo.Text.Content" parent="PureInfo">
+    <style name="PureInfo.Text" parent="PureInfo">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
@@ -203,7 +200,12 @@
         <item name="android:textColor">?colorOnSurface</item>
     </style>
 
-    <style name="PureInfo.Text.Content.Card" parent="PureInfo.Text.Content">
+    <style name="PureInfo.Text.Title" parent="PureInfo.Text">
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
+        <item name="android:textColor">?colorOnSecondary</item>
+    </style>
+
+    <style name="PureInfo.Text.Card" parent="PureInfo.Text">
         <item name="android:background">@drawable/shape_info</item>
     </style>
 
