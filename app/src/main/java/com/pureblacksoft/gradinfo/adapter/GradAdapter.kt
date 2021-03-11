@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.data.Grad
 import com.pureblacksoft.gradinfo.databinding.CardGradBinding
 import com.pureblacksoft.gradinfo.dialog.CriteriaDialog
+import com.pureblacksoft.gradinfo.fragment.GradFragment
 import java.util.*
 
 class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapter<GradAdapter.ViewHolder>(), Filterable
@@ -78,7 +81,10 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
             binding.txtYearGC.text = grad.year
             Glide.with(context).load(grad.image).into(binding.imgGradGC)
 
-            binding.root.setOnClickListener {}
+            binding.root.setOnClickListener {
+                GradFragment.accessedGrad = filteredGradList[adapterPosition]
+                it.findNavController().navigate(R.id.action_global_gradFragment)
+            }
         }
     }
 }

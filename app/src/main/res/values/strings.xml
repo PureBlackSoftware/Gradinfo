@@ -19,6 +19,7 @@
 
     <!-- region SearchFragment -->
     <string name="Search_Title">"Arama"</string>
+
     <string name="Search_Query_Hint_Name">"Öğrenci adı giriniz…"</string>
     <string name="Search_Query_Hint_Number">"Öğrenci numarası giriniz…"</string>
     <string name="Search_No_Result">"Hiç sonuç bulunamadı"</string>
@@ -31,10 +32,26 @@
 
     <!-- region PrefFragment -->
     <string name="Pref_Title">"Tercihler"</string>
+
     <string name="Pref_Theme">"Uygulama Teması"</string>
     <string name="Pref_Theme_Default">"Varsayılan Tema"</string>
     <string name="Pref_Theme_Light">"Açık Tema"</string>
     <string name="Pref_Theme_Dark">"Koyu Tema"</string>
+    <!-- endregion -->
+
+    <!-- region GradFragment -->
+    <string name="Grad_Title">"Mezun Öğrenci"</string>
+
+    <string name="Grad_Number_Sample">"1170606018"</string>
+    <string name="Grad_Name_Sample">"Murat BIYIK"</string>
+    <string name="Grad_Degree_Sample">"Bilgisayar Mühendisliği"</string>
+    <string name="Grad_Year_Sample">"2021"</string>
+
+    <string name="Grad_Mail_Sample">"Belirtilmemiş"</string>
+    <string name="Grad_Phone_Sample">"Belirtilmemiş"</string>
+    <string name="Grad_Profession_Sample">"Belirtilmemiş"</string>
+    <string name="Grad_Province_Sample">"Belirtilmemiş"</string>
+    <string name="Grad_Note_Sample">"Belirtilmemiş"</string>
     <!-- endregion -->
 
     <!-- region FilterDialog -->
@@ -55,13 +72,6 @@
 
     <string name="Criteria_Name">"Öğrenci Adı"</string>
     <string name="Criteria_Number">"Öğrenci Numarası"</string>
-    <!-- endregion -->
-
-    <!-- region Grad -->
-    <string name="Grad_Number_Sample">"1170606018"</string>
-    <string name="Grad_Name_Sample">"Murat BIYIK"</string>
-    <string name="Grad_Degree_Sample">"Bilgisayar Mühendisliği"</string>
-    <string name="Grad_Year_Sample">"2021"</string>
     <!-- endregion -->
 
 </resources>
