@@ -47,15 +47,15 @@
     <string name="Grad_Degree_Sample">"Bilgisayar Mühendisliği"</string>
     <string name="Grad_Year_Sample">"2021"</string>
 
-    <string name="Grad_Mail_Label">"E-Mail"</string>
-    <string name="Grad_Mail_Sample">"Belirtilmemiş"</string>
-    <string name="Grad_Phone_Label">"Telefon"</string>
-    <string name="Grad_Phone_Sample">"Belirtilmemiş"</string>
-
     <string name="Grad_Profession_Label">"Meslek"</string>
     <string name="Grad_Profession_Sample">"Belirtilmemiş"</string>
     <string name="Grad_Province_Label">"Şehir"</string>
     <string name="Grad_Province_Sample">"Belirtilmemiş"</string>
+
+    <string name="Grad_Email_Label">"E-Mail"</string>
+    <string name="Grad_Email_Sample">"Belirtilmemiş"</string>
+    <string name="Grad_Phone_Label">"Telefon"</string>
+    <string name="Grad_Phone_Sample">"Belirtilmemiş"</string>
 
     <string name="Grad_Note_Label">"Not"</string>
     <string name="Grad_Note_Sample">"Belirtilmemiş"</string>

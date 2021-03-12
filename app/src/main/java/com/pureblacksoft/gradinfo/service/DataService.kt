@@ -115,7 +115,12 @@ class DataService : JobIntentService()
                                 name = gradObject.getString("grad_name"),
                                 degree = gradObject.getString("degree_name"),
                                 year = gradObject.getString("year_name"),
-                                image = URL_IMAGE_GRAD + gradObject.getString("grad_image")
+                                image = URL_IMAGE_GRAD + gradObject.getString("grad_image"),
+                                profession = gradObject.getString("grad_profession"),
+                                province = gradObject.getString("grad_province"),
+                                email = gradObject.getString("grad_email"),
+                                phone = gradObject.getString("grad_phone"),
+                                note = gradObject.getString("grad_note")
                             )
                         )
 
@@ -164,7 +169,12 @@ class DataService : JobIntentService()
                                 name = filteredGradObject.getString("grad_name"),
                                 degree = filteredGradObject.getString("degree_name"),
                                 year = filteredGradObject.getString("year_name"),
-                                image = URL_IMAGE_GRAD + filteredGradObject.getString("grad_image")
+                                image = URL_IMAGE_GRAD + filteredGradObject.getString("grad_image"),
+                                profession = filteredGradObject.getString("grad_profession"),
+                                province = filteredGradObject.getString("grad_province"),
+                                email = filteredGradObject.getString("grad_email"),
+                                phone = filteredGradObject.getString("grad_phone"),
+                                note = filteredGradObject.getString("grad_note")
                             )
                         )
 
