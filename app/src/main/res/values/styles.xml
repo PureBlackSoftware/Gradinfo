@@ -234,11 +234,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:orientation">horizontal</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="PureGrad.Linear.Vertical" parent="PureGrad.Linear">
-        <item name="android:orientation">vertical</item>
+    <style name="PureGrad.Linear.Horizontal" parent="PureGrad.Linear">
+        <item name="android:orientation">horizontal</item>
     </style>
 
     <style name="PureGrad.Image" parent="PureGrad">
@@ -248,10 +248,15 @@
     </style>
 
     <style name="PureGrad.Text" parent="PureGrad">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/App_TextSize_M</item>
         <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="PureGrad.Text.Label" parent="PureGrad.Text">
+        <item name="android:layout_width">@dimen/Grad_Label_Width</item>
+        <item name="android:textColor">?colorOnSecondary</item>
     </style>
     <!-- endregion -->
 

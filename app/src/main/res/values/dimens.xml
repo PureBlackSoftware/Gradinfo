@@ -20,5 +20,6 @@
     <!-- region Grad -->
     <dimen name="Grad_Image_Width">128dp</dimen>
     <dimen name="Grad_Image_Height">128dp</dimen>
+    <dimen name="Grad_Label_Width">128dp</dimen>
     <!-- endregion -->
 </resources>

@@ -3,7 +3,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/PureGrad.Card">
 
-    <LinearLayout style="@style/PureGrad.Linear">
+    <LinearLayout style="@style/PureGrad.Linear.Horizontal">
 
         <ImageView
             android:id="@+id/imgGradGC"
@@ -12,7 +12,7 @@
             android:contentDescription="@string/Description_Image"
             android:src="@drawable/img_grad" />
 
-        <LinearLayout style="@style/PureGrad.Linear.Vertical">
+        <LinearLayout style="@style/PureGrad.Linear">
 
             <TextView
                 android:id="@+id/txtNameGC"

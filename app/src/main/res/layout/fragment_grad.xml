@@ -12,4 +12,125 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/App_Margin_S" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdContactGF"
+        style="@style/PureGrad.Card"
+        android:layout_below="@+id/incGradCardGF"
+        android:layout_marginHorizontal="@dimen/App_Margin_S">
+
+        <LinearLayout
+            style="@style/PureGrad.Linear"
+            android:layout_marginVertical="@dimen/App_Margin_S">
+
+            <LinearLayout
+                style="@style/PureGrad.Linear.Horizontal"
+                android:layout_marginVertical="@dimen/App_Margin_S">
+
+                <TextView
+                    style="@style/PureGrad.Text.Label"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
+                    android:text="@string/Grad_Mail_Label" />
+
+                <TextView
+                    android:id="@+id/txtMailGF"
+                    style="@style/PureGrad.Text"
+                    android:layout_marginHorizontal="@dimen/App_Margin_S"
+                    android:text="@string/Grad_Mail_Sample" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/PureGrad.Linear.Horizontal"
+                android:layout_marginVertical="@dimen/App_Margin_S">
+
+                <TextView
+                    style="@style/PureGrad.Text.Label"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
+                    android:text="@string/Grad_Phone_Label" />
+
+                <TextView
+                    android:id="@+id/txtPhoneGF"
+                    style="@style/PureGrad.Text"
+                    android:layout_marginHorizontal="@dimen/App_Margin_S"
+                    android:text="@string/Grad_Phone_Sample" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdStatusGF"
+        style="@style/PureGrad.Card"
+        android:layout_below="@+id/crdContactGF"
+        android:layout_margin="@dimen/App_Margin_S">
+
+        <LinearLayout
+            style="@style/PureGrad.Linear"
+            android:layout_marginVertical="@dimen/App_Margin_S">
+
+            <LinearLayout
+                style="@style/PureGrad.Linear.Horizontal"
+                android:layout_marginVertical="@dimen/App_Margin_S">
+
+                <TextView
+                    style="@style/PureGrad.Text.Label"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
+                    android:text="@string/Grad_Profession_Label" />
+
+                <TextView
+                    android:id="@+id/txtProfessionGF"
+                    style="@style/PureGrad.Text"
+                    android:layout_marginHorizontal="@dimen/App_Margin_S"
+                    android:text="@string/Grad_Profession_Sample" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/PureGrad.Linear.Horizontal"
+                android:layout_marginVertical="@dimen/App_Margin_S">
+
+                <TextView
+                    style="@style/PureGrad.Text.Label"
+                    android:layout_marginHorizontal="@dimen/App_Margin_M"
+                    android:text="@string/Grad_Province_Label" />
+
+                <TextView
+                    android:id="@+id/txtProvinceGF"
+                    style="@style/PureGrad.Text"
+                    android:layout_marginHorizontal="@dimen/App_Margin_S"
+                    android:text="@string/Grad_Province_Sample" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdNoteGF"
+        style="@style/PureGrad.Card"
+        android:layout_below="@+id/crdStatusGF"
+        android:layout_marginHorizontal="@dimen/App_Margin_S">
+
+        <LinearLayout
+            style="@style/PureGrad.Linear.Horizontal"
+            android:layout_marginVertical="@dimen/App_Margin_M">
+
+            <TextView
+                style="@style/PureGrad.Text.Label"
+                android:layout_marginHorizontal="@dimen/App_Margin_M"
+                android:text="@string/Grad_Note_Label" />
+
+            <TextView
+                android:id="@+id/txtNoteGF"
+                style="@style/PureGrad.Text"
+                android:layout_marginHorizontal="@dimen/App_Margin_S"
+                android:text="@string/Grad_Note_Sample" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </RelativeLayout>
