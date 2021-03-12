@@ -33,6 +33,7 @@ class SearchFragment : Fragment(R.layout.fragment_search)
     private val binding get() = _binding!!
 
     private lateinit var gradAdapter: GradAdapter
+    private var searchText: String? = ""
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -72,6 +73,7 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         binding.searchSF.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String?): Boolean {
                 gradAdapter.filter.filter(newText)
+                searchText = newText
 
                 return false
             }
@@ -94,6 +96,10 @@ class SearchFragment : Fragment(R.layout.fragment_search)
             } else if (gradAdapter.itemCount == 0 && binding.txtNoResultSF.visibility == View.GONE) {
                 binding.lnrInfoSF.visibility = View.VISIBLE
             }
+        }
+
+        if (searchText != "") {
+            binding.searchSF.onActionViewExpanded()
         }
         //endregion
 
@@ -149,12 +155,10 @@ class SearchFragment : Fragment(R.layout.fragment_search)
     }
 
     private fun setGradAdapter() {
-        if (_binding != null && DataService.gradList.size != 0) {
-            Log.d(TAG, "setGradAdapter: Running")
+        Log.d(TAG, "setGradAdapter: Running")
 
-            gradAdapter = GradAdapter(DataService.gradList)
-            binding.recyclerSF.adapter = gradAdapter
-            gradAdapter.filter.filter("")
-        }
+        gradAdapter = GradAdapter(DataService.gradList)
+        binding.recyclerSF.adapter = gradAdapter
+        gradAdapter.filter.filter(searchText)
     }
 }

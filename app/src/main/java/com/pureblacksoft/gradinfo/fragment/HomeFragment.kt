@@ -114,6 +114,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     override fun onDestroyView() {
         super.onDestroyView()
 
+        MainActivity.onSuccessfulService = null
         activity.binding.bottomNavMA.setOnNavigationItemReselectedListener(null)
 
         _binding = null
@@ -127,13 +128,11 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     }
 
     private fun setGradAdapter() {
-        if (_binding != null && DataService.gradList.size != 0) {
-            Log.d(TAG, "setGradAdapter: Running")
+        Log.d(TAG, "setGradAdapter: Running")
 
-            gradAdapter = if (FilterDialog.filterActive) GradAdapter(DataService.filteredGradList)
-            else GradAdapter(DataService.gradList)
+        gradAdapter = if (FilterDialog.filterActive) GradAdapter(DataService.filteredGradList)
+        else GradAdapter(DataService.gradList)
 
-            binding.recyclerHF.adapter = gradAdapter
-        }
+        binding.recyclerHF.adapter = gradAdapter
     }
 }
