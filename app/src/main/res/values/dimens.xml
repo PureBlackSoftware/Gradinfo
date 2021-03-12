@@ -6,6 +6,8 @@
     <dimen name="App_Margin_M">10dp</dimen>
     <dimen name="App_Margin_L">20dp</dimen>
     <dimen name="App_Margin_XL">40dp</dimen>
+    <dimen name="App_Margin_XXL">80dp</dimen>
+    <dimen name="App_Margin_XXXL">160dp</dimen>
 
     <dimen name="App_Padding_S">5dp</dimen>
     <dimen name="App_Padding_M">10dp</dimen>
@@ -21,5 +23,7 @@
     <dimen name="Grad_Image_Width">128dp</dimen>
     <dimen name="Grad_Image_Height">128dp</dimen>
     <dimen name="Grad_Label_Width">128dp</dimen>
+    <dimen name="Grad_Edit_Width">256dp</dimen>
+    <dimen name="Grad_Login_Width">128dp</dimen>
     <!-- endregion -->
 </resources>

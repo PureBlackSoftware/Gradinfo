@@ -28,6 +28,10 @@
 
     <!-- region UserFragment -->
     <string name="User_Title">"Kullanıcı"</string>
+    <string name="User_Number">"Öğrenci Numarası"</string>
+    <string name="User_Password">"Şifre"</string>
+    <string name="User_Login">"Giriş"</string>
+    <string name="User_Login_Failed">"Öğrenci numarası veya şifre hatalı"</string>
     <!-- endregion -->
 
     <!-- region PrefFragment -->

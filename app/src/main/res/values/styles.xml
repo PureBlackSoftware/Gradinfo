@@ -86,7 +86,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:imeOptions">flagNoExtractUi|flagNoFullscreen</item>
         <item name="android:textSize">@dimen/App_TextSize_M</item>
-        <item name="android:background">@drawable/shape_search</item>
+        <item name="android:background">@drawable/shape_edit</item>
         <item name="iconifiedByDefault">false</item>
         <item name="searchIcon">@null</item>
         <item name="queryBackground">@null</item>
@@ -114,6 +114,11 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="PureButton.Text.Title" parent="PureButton.Text">
+        <item name="android:textSize">@dimen/App_TextSize_L</item>
+        <item name="android:textColor">?colorOnSecondary</item>
+    </style>
+
     <style name="PureButton.Text.Selectable" parent="PureButton.Text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
@@ -123,9 +128,9 @@
         <item name="android:background">@drawable/shape_button</item>
     </style>
 
-    <style name="PureButton.Text.Title" parent="PureButton.Text">
-        <item name="android:textSize">@dimen/App_TextSize_L</item>
-        <item name="android:textColor">?colorOnSecondary</item>
+    <style name="PureButton.Text.Selectable.Login" parent="PureButton.Text.Selectable">
+        <item name="android:layout_width">@dimen/Grad_Login_Width</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="PureButton.Radio.Group" parent="PureButton">
@@ -247,6 +252,11 @@
         <item name="android:layout_gravity">center_vertical</item>
     </style>
 
+    <style name="PureGrad.Image.Profile" parent="PureGrad.Image">
+        <item name="android:background">@drawable/shape_profile</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
     <style name="PureGrad.Text" parent="PureGrad">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -257,6 +267,15 @@
     <style name="PureGrad.Text.Label" parent="PureGrad.Text">
         <item name="android:layout_width">@dimen/Grad_Label_Width</item>
         <item name="android:textColor">?colorOnSecondary</item>
+    </style>
+
+    <style name="PureGrad.Text.Edit" parent="PureGrad.Text">
+        <item name="android:layout_width">@dimen/Grad_Edit_Width</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:imeOptions">flagNoExtractUi|flagNoFullscreen</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">?colorOnBackground</item>
+        <item name="android:background">@drawable/shape_edit</item>
     </style>
     <!-- endregion -->
 

@@ -41,6 +41,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/containerMA"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        style="@style/PureBox.Container.Scrollable"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_main" />
+
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spinKitMA"
         style="@style/SpinKitView.Circle"
@@ -48,14 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:visibility="gone"
-        app:SpinKit_Color="?colorOnSurface" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/containerMA"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        style="@style/PureBox.Container.Scrollable"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_main" />
+        app:SpinKit_Color="?colorOnBackground" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavMA"
