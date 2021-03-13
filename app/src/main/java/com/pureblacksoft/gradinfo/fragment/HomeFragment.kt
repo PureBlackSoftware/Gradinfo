@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -30,6 +31,12 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     private val mContext get() = _context!!
     private val activity get() = _activity!!
     private val binding get() = _binding!!
+
+    private val backCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            activity.finishAffinity()
+        }
+    }
 
     private lateinit var gradAdapter: GradAdapter
 
@@ -108,6 +115,8 @@ class HomeFragment : Fragment(R.layout.fragment_home)
                 linearManager.smoothScrollToPosition(binding.recyclerHF, null, 0)
             }
         }
+
+        activity.onBackPressedDispatcher.addCallback(activity, backCallback)
         //endregion
     }
 
@@ -116,6 +125,8 @@ class HomeFragment : Fragment(R.layout.fragment_home)
 
         MainActivity.onSuccessfulService = null
         activity.binding.bottomNavMA.setOnNavigationItemReselectedListener(null)
+
+        backCallback.remove()
 
         _binding = null
     }

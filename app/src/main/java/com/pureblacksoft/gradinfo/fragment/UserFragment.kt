@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -26,6 +27,13 @@ class UserFragment : Fragment(R.layout.fragment_user)
     private val mContext get() = _context!!
     private val activity get() = _activity!!
     private val binding get() = _binding!!
+
+    private val backCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            val action = UserFragmentDirections.actionGlobalHomeFragment()
+            findNavController().navigate(action)
+        }
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -68,11 +76,15 @@ class UserFragment : Fragment(R.layout.fragment_user)
             val action = UserFragmentDirections.actionGlobalPrefFragment()
             findNavController().navigate(action)
         }
+
+        activity.onBackPressedDispatcher.addCallback(activity, backCallback)
         //endregion
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+
+        backCallback.remove()
 
         _binding = null
     }
