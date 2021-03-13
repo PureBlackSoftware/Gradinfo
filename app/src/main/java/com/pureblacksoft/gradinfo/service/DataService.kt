@@ -17,9 +17,9 @@ class DataService : JobIntentService()
     companion object {
         private const val TAG = "DataService"
 
-        private const val URL_GRADINFO = "https://pureblack.000webhostapp.com/gradinfo/"
+        const val URL_GRADINFO = "https://pureblack.000webhostapp.com/gradinfo/"
+        const val URL_IMAGE_GRAD = URL_GRADINFO + "image/grad/"
         private const val URL_DATA = URL_GRADINFO + "script/db_data.php"
-        private const val URL_IMAGE_GRAD = URL_GRADINFO + "image/grad/"
 
         var degreeList = mutableListOf<String>()
         var yearList = mutableListOf<String>()
@@ -68,7 +68,7 @@ class DataService : JobIntentService()
         degreeList.add(getString(R.string.Filter_Degree_All))
         yearList.add(getString(R.string.Filter_Year_All))
 
-        val dataURL = "$URL_DATA?degree_id=0&year_id=0"
+        val dataURL = "$URL_DATA?degree_id='0'&year_id='0'"
         val jsonRequest = JsonObjectRequest(Request.Method.GET, dataURL, null,
             { response ->
                 Log.d(TAG, "Connection successful: $dataURL")
@@ -148,7 +148,7 @@ class DataService : JobIntentService()
     private fun requestFilteredData() {
         Log.d(TAG, "requestFilteredData: Running")
 
-        val filteredDataURL = "$URL_DATA?degree_id=${FilterDialog.currentDegreeId}&year_id=${FilterDialog.currentYearId}"
+        val filteredDataURL = "$URL_DATA?degree_id='${FilterDialog.currentDegreeId}'&year_id='${FilterDialog.currentYearId}'"
         val jsonRequest = JsonObjectRequest(Request.Method.GET, filteredDataURL, null,
             { response ->
                 Log.d(TAG, "Connection successful: $filteredDataURL")

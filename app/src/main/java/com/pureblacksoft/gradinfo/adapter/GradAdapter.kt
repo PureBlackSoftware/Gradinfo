@@ -8,7 +8,7 @@ import android.widget.Filterable
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.pureblacksoft.gradinfo.R
+import com.pureblacksoft.gradinfo.NavMainDirections
 import com.pureblacksoft.gradinfo.data.Grad
 import com.pureblacksoft.gradinfo.databinding.CardGradBinding
 import com.pureblacksoft.gradinfo.dialog.CriteriaDialog
@@ -83,7 +83,9 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
 
             binding.root.setOnClickListener {
                 GradFragment.accessedGrad = filteredGradList[adapterPosition]
-                it.findNavController().navigate(R.id.action_global_gradFragment)
+
+                val action = NavMainDirections.actionGlobalGradFragment()
+                it.findNavController().navigate(action)
             }
         }
     }
