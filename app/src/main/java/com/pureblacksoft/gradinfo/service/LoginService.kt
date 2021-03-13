@@ -66,7 +66,7 @@ class LoginService : JobIntentService()
     private fun requestLogin(userNumber: String, userPassword: String) {
         Log.d(TAG, "requestLogin: Running")
 
-        val loginURL = "$URL_LOGIN?user_number='$userNumber'&user_password='$userPassword'"
+        val loginURL = "$URL_LOGIN?user_number=$userNumber&user_password='$userPassword'"
         val jsonRequest = JsonObjectRequest(Request.Method.GET, loginURL, null,
             { response ->
                 Log.d(TAG, "Connection successful: $loginURL")
