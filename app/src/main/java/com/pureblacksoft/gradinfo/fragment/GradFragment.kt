@@ -55,11 +55,11 @@ class GradFragment : Fragment(R.layout.fragment_grad)
         binding.incGradCardGF.txtYearGC.text = accessedGrad.year
         Glide.with(this).load(accessedGrad.image).into(binding.incGradCardGF.imgGradGC)
 
-        binding.txtProfessionGF.text = accessedGrad.profession
-        binding.txtProvinceGF.text = accessedGrad.province
-        binding.txtEmailGF.text = accessedGrad.email
-        binding.txtPhoneGF.text = accessedGrad.phone
-        binding.txtNoteGF.text = accessedGrad.note
+        binding.incGradCardPrivateGF.txtProfessionGCP.text = accessedGrad.profession
+        binding.incGradCardPrivateGF.txtProvinceGCP.text = accessedGrad.province
+        binding.incGradCardPrivateGF.txtEmailGCP.text = accessedGrad.email
+        binding.incGradCardPrivateGF.txtPhoneGCP.text = accessedGrad.phone
+        binding.incGradCardPrivateGF.txtNoteGCP.text = accessedGrad.note
         //endregion
 
         //region Button
