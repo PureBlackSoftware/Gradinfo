@@ -5,40 +5,20 @@
     style="@style/PureRoot.Relative"
     tools:context=".fragment.UserFragment">
 
-    <LinearLayout
-        style="@style/PureBox.Linear"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/App_Margin_XXXL">
+    <include
+        android:id="@+id/incGradCardUF"
+        layout="@layout/card_grad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/App_Margin_S" />
 
-        <ImageView
-            style="@style/PureGrad.Image.Profile"
-            android:layout_marginBottom="@dimen/App_Margin_L"
-            android:contentDescription="@string/Description_Image"
-            android:src="@drawable/img_grad" />
-
-        <EditText
-            android:id="@+id/edtNumberUF"
-            style="@style/PureGrad.Text.Edit"
-            android:layout_marginBottom="@dimen/App_Margin_M"
-            android:hint="@string/User_Number"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="10" />
-
-        <EditText
-            android:id="@+id/edtPasswordUF"
-            style="@style/PureGrad.Text.Edit"
-            android:layout_marginBottom="@dimen/App_Margin_L"
-            android:hint="@string/User_Password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:maxLength="32" />
-
-        <TextView
-            android:id="@+id/txtLoginUF"
-            style="@style/PureButton.Text.Selectable.Login"
-            android:text="@string/User_Login" />
-
-    </LinearLayout>
+    <include
+        android:id="@+id/incGradCardPrivateUF"
+        layout="@layout/card_grad_private"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/incGradCardUF"
+        android:layout_marginHorizontal="@dimen/App_Margin_S"
+        android:layout_marginBottom="@dimen/App_Margin_S" />
 
 </RelativeLayout>

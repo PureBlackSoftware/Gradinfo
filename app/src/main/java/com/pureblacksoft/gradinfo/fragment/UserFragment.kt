@@ -1,22 +1,24 @@
 package com.pureblacksoft.gradinfo.fragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.pureblacksoft.gradinfo.R
 import com.pureblacksoft.gradinfo.activity.MainActivity
+import com.pureblacksoft.gradinfo.data.Grad
 import com.pureblacksoft.gradinfo.databinding.FragmentUserBinding
-import com.pureblacksoft.gradinfo.function.AppFun
-import com.pureblacksoft.gradinfo.service.LoginService
 
 class UserFragment : Fragment(R.layout.fragment_user)
 {
+    companion object {
+        lateinit var userGrad: Grad
+    }
+
     private var _context: Context? = null
     private var _activity: MainActivity? = null
     private var _binding: FragmentUserBinding? = null
@@ -47,48 +49,24 @@ class UserFragment : Fragment(R.layout.fragment_user)
         activity.binding.imgToolbarButtonMA.setImageResource(R.drawable.ic_pref)
         //endregion
 
-        //region User Control
-        fun navigateToGradFragment() {
-            GradFragment.accessedGrad = LoginService.userGrad!!
+        //region Get Data
+        binding.incGradCardUF.txtNumberGC.text = userGrad.number.toString()
+        binding.incGradCardUF.txtNameGC.text = userGrad.name
+        binding.incGradCardUF.txtDegreeGC.text = userGrad.degree
+        binding.incGradCardUF.txtYearGC.text = userGrad.year
+        Glide.with(this).load(userGrad.image).into(binding.incGradCardUF.imgGradGC)
 
-            val action = UserFragmentDirections.actionGlobalGradFragment()
-            findNavController().navigate(action)
-        }
-
-        if (LoginService.userGrad != null) {
-            navigateToGradFragment()
-        }
-        //endregion
-
-        //region Event
-        LoginService.onSuccess = {
-            navigateToGradFragment()
-        }
-
-        LoginService.onFailure = {
-            if (LoginService.wrongParam) {
-                AppFun.showToast(mContext, R.string.User_Login_Wrong_Param, Toast.LENGTH_LONG)
-            } else {
-                AppFun.showToast(mContext, R.string.User_Login_Failed, Toast.LENGTH_LONG)
-            }
-        }
+        binding.incGradCardPrivateUF.txtProfessionGCP.text = userGrad.profession
+        binding.incGradCardPrivateUF.txtProvinceGCP.text = userGrad.province
+        binding.incGradCardPrivateUF.txtEmailGCP.text = userGrad.email
+        binding.incGradCardPrivateUF.txtPhoneGCP.text = userGrad.phone
+        binding.incGradCardPrivateUF.txtNoteGCP.text = userGrad.note
         //endregion
 
         //region Button
         activity.binding.imgToolbarButtonMA.setOnClickListener {
-            val action = UserFragmentDirections.actionUserFragmentToPrefFragment()
+            val action = UserFragmentDirections.actionGlobalPrefFragment()
             findNavController().navigate(action)
-        }
-
-        binding.txtLoginUF.setOnClickListener {
-            val userNumber = binding.edtNumberUF.text.toString()
-            val userPassword = binding.edtPasswordUF.text.toString()
-
-            if (userNumber.length == 10 && userPassword.length >= 6) {
-                startLoginService(userNumber, userPassword)
-            } else {
-                AppFun.showToast(mContext, R.string.User_Login_Wrong_Param, Toast.LENGTH_LONG)
-            }
         }
         //endregion
     }
@@ -104,12 +82,5 @@ class UserFragment : Fragment(R.layout.fragment_user)
 
         _context = null
         _activity = null
-    }
-
-    private fun startLoginService(userNumber: String, userPassword: String) {
-        val intent = Intent(mContext, LoginService::class.java)
-        intent.putExtra("user_number", userNumber)
-        intent.putExtra("user_password", userPassword)
-        LoginService.enqueueWork(mContext, intent)
     }
 }

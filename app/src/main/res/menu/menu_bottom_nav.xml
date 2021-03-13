@@ -13,7 +13,7 @@
         android:title="@string/Search_Title" />
 
     <item
-        android:id="@+id/userFragment"
+        android:id="@+id/loginFragment"
         android:icon="@drawable/selector_user"
         android:title="@string/User_Title" />
 

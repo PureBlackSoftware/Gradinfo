@@ -26,13 +26,16 @@
     <string name="Search_Info">"İsim ve numara aramaları arasında geçiş yapmak için (U) butonunu kullanın."</string>
     <!-- endregion -->
 
+    <!-- region LoginFragment -->
+    <string name="Login_Title">"Giriş"</string>
+    <string name="Login_Number">"Öğrenci Numarası"</string>
+    <string name="Login_Password">"Şifre"</string>
+    <string name="Login_Fail">"Giriş başarısız, internet bağlantınızı kontrol edin."</string>
+    <string name="Login_Wrong_Param">"Öğrenci numarası veya şifre hatalı"</string>
+    <!-- endregion -->
+
     <!-- region UserFragment -->
     <string name="User_Title">"Kullanıcı"</string>
-    <string name="User_Number">"Öğrenci Numarası"</string>
-    <string name="User_Password">"Şifre"</string>
-    <string name="User_Login">"Giriş"</string>
-    <string name="User_Login_Failed">"Giriş başarısız, internet bağlantınızı kontrol edin."</string>
-    <string name="User_Login_Wrong_Param">"Öğrenci numarası veya şifre hatalı"</string>
     <!-- endregion -->
 
     <!-- region PrefFragment -->
