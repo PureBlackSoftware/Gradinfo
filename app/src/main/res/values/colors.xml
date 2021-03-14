@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="purple_200">#BB86FC</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
-    <color name="teal_200">#03DAC5</color>
-    <color name="teal_700">#018786</color>
 
-    <!-- region Custom Colors -->
+    <!-- region Colors -->
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="teal">#00695c</color>
@@ -47,15 +42,16 @@
     <color name="OnBackground">@color/black</color>
     <color name="Surface">@color/red_light</color>
     <color name="OnSurface">@color/black</color>
-    <color name="Error">@color/Primary_Variant</color>
-    <color name="OnError">@color/On_Primary</color>
+    <color name="Error">@color/teal_light</color>
+    <color name="OnError">@color/black</color>
 
     <color name="Background_Night">@color/black</color>
     <color name="OnBackground_Night">@color/white</color>
     <color name="Surface_Night">@color/red_dark</color>
     <color name="OnSurface_Night">@color/white</color>
-    <color name="Error_Night">@color/Primary_Variant</color>
-    <color name="OnError_Night">@color/On_Primary</color>
+    <color name="Error_Night">@color/teal_dark</color>
+    <color name="OnError_Night">@color/white</color>
     <!-- endregion -->
     <!-- endregion -->
+
 </resources>
