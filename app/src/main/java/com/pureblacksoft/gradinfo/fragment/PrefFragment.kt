@@ -89,3 +89,5 @@ class PrefFragment : Fragment(R.layout.fragment_pref)
         }
     }
 }
+
+//PureBlack Software / Murat BIYIK

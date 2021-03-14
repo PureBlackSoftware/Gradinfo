@@ -162,3 +162,5 @@ class SearchFragment : Fragment(R.layout.fragment_search)
         gradAdapter.filter.filter(searchText)
     }
 }
+
+//PureBlack Software / Murat BIYIK

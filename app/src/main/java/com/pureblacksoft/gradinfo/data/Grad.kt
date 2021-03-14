@@ -10,3 +10,5 @@ data class Grad(var number: Int,
                 var email: String,
                 var phone: String,
                 var note: String)
+
+//PureBlack Software / Murat BIYIK

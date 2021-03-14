@@ -96,3 +96,5 @@ class UserFragment : Fragment(R.layout.fragment_user)
         _activity = null
     }
 }
+
+//PureBlack Software / Murat BIYIK

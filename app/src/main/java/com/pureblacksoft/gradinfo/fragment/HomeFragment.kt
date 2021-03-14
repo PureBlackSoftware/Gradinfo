@@ -147,3 +147,5 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         binding.recyclerHF.adapter = gradAdapter
     }
 }
+
+//PureBlack Software / Murat BIYIK

@@ -90,3 +90,5 @@ class GradAdapter(private val gradList: MutableList<Grad>) : RecyclerView.Adapte
         }
     }
 }
+
+//PureBlack Software / Murat BIYIK

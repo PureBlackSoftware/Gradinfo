@@ -82,3 +82,5 @@ class GradFragment : Fragment(R.layout.fragment_grad)
         _activity = null
     }
 }
+
+//PureBlack Software / Murat BIYIK

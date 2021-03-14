@@ -18,7 +18,7 @@
 
     <!-- region App Colors -->
     <!-- region Primary Colors -->
-    <color name="Primary">@color/teal_light</color>
+    <color name="Primary">@color/teal</color>
     <color name="Primary_Variant">@color/teal_dark</color>
     <color name="On_Primary">@color/white</color>
 

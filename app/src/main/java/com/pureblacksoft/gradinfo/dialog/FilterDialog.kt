@@ -81,3 +81,5 @@ class FilterDialog(context: Context) : Dialog(context), AdapterView.OnItemSelect
         binding.spnYearFD.setSelection(currentYearId)
     }
 }
+
+//PureBlack Software / Murat BIYIK

@@ -45,3 +45,5 @@ class CriteriaDialog(context: Context) : Dialog(context)
         //endregion
     }
 }
+
+//PureBlack Software / Murat BIYIK

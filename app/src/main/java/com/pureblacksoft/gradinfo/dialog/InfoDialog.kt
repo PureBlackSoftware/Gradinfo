@@ -13,3 +13,5 @@ class InfoDialog
         }
     }
 }
+
+//PureBlack Software / Murat BIYIK
