@@ -38,6 +38,8 @@
     <!-- endregion -->
 
     <!-- region Custom Theme -->
+    <color name="Icon_Background">@color/teal_dark</color>
+
     <color name="Background">@color/white</color>
     <color name="OnBackground">@color/black</color>
     <color name="Surface">@color/red_light</color>

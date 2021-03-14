@@ -1,5 +1,13 @@
 <resources>
 
+    <!-- region Theme -->
+    <style name="Theme.Gradinfo.Launch">
+        <item name="android:windowBackground">
+            @drawable/layer_launch
+        </item>
+    </style>
+    <!-- endregion -->
+
     <!-- region PureRoot -->
     <style name="PureRoot" />
 
