@@ -30,7 +30,7 @@
     <string name="Login_Title">"Giriş"</string>
     <string name="Login_Number">"Öğrenci Numarası"</string>
     <string name="Login_Password">"Şifre"</string>
-    <string name="Login_Fail">"Giriş başarısız, internet bağlantınızı kontrol edin."</string>
+    <string name="Login_Fail">"İnternet bağlantısı bulunamadı"</string>
     <string name="Login_Wrong_Param">"Öğrenci numarası veya şifre hatalı"</string>
     <!-- endregion -->
 
